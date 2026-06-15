@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Комбоскіні зі Святим Спиридоном — Освячений Оберіг з Корфу</title>
+  <link rel="icon" type="image/jpeg" href="icon-spyridon.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="icon-spyridon.jpg">
+  <link rel="preload" href="black-1.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="red-1.webp" as="image">
+  <link rel="preload" href="red-variant.webp" as="image">
+  <link rel="preload" href="blue-1.webp" as="image">
+  <link rel="preload" href="green-1.webp" as="image">
+  <link rel="preload" href="tile-black.webp" as="image">
+  <link rel="preload" href="tile-burgundy.webp" as="image">
+  <link rel="preload" href="tile-red.webp" as="image">
+  <link rel="preload" href="tile-blue.webp" as="image">
+  <link rel="preload" href="tile-green.webp" as="image">
+
+  <!-- GTM HEAD PLACEHOLDER -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WX296MT3');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Hotjar Tracking Code for https://grace-heritage.shop/ -->
+  <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:6721818,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tailwind-static.css">
+
+  <style>
+    :root {
+      --parchment: #FAF7F0;
+      --parchment-dark: #F2EDE0;
+      --parchment-mid: #EDE5D0;
+      --burgundy: #6B1D2A;
+      --burgundy-light: #8B2D3E;
+      --burgundy-muted: #A04050;
+      --gold: #C9A96E;
+      --gold-light: #DFC08A;
+      --ink: #1C1008;
+      --ink-muted: #3D2B18;
+      --ink-light: #6B5744;
+      --shadow-warm: rgba(107,29,42,0.15);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--parchment);
+      color: var(--ink);
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif { font-family: 'Lora', Georgia, serif; }
+    .fell { font-family: 'IM Fell English', Georgia, serif; }
+
+    /* ── Texture overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* ── Decorative dividers ── */
+    .divider-cross {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+      margin: 32px 0;
+    }
+    .divider-cross::before,
+    .divider-cross::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    .divider-cross::after {
+      background: linear-gradient(to left, transparent, var(--gold));
+    }
+    .divider-cross span {
+      color: var(--gold);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    /* ── Color selector ── */
+    .color-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      outline: none;
+      flex-shrink: 0;
+    }
+    .color-btn.active {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px var(--parchment), 0 0 0 4px var(--gold);
+      transform: scale(1.12);
+    }
+    .color-btn-black { background: #1a1a1a; }
+    .color-btn-red { background: #6B1D2A; }
+
+    /* ── Color pill buttons (Compact Capsules) ── */
+    .color-pill-wrap {
+      background: var(--parchment);
+      border: 1px solid var(--parchment-mid);
+      border-radius: 20px;
+      padding: 14px 12px;
+    }
+    .color-pill-label {
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+      margin-bottom: 12px;
+    }
+    .color-pill-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .color-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid #3D2B18;
+      background: transparent;
+      color: #3D2B18;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+      outline: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .color-pill:hover {
+      background: rgba(61, 43, 24, 0.08);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+    .color-pill.active {
+      border: 1.5px solid var(--gold);
+      transform: scale(1.05);
+      z-index: 5;
+    }
+    .color-pill.active.color-pill-black { background: #1a1a1a; color: #fff; box-shadow: 0 0 8px rgba(26,26,26,0.3); border-color: #1a1a1a; }
+    .color-pill.active.color-pill-burgundy { background: #6B1D2A; color: #fff; box-shadow: 0 0 8px rgba(107,29,42,0.4); border-color: #6B1D2A; }
+    .color-pill.active.color-pill-red { background: #D02A2E; color: #fff; box-shadow: 0 0 8px rgba(208,42,46,0.4); border-color: #D02A2E; }
+    .color-pill.active.color-pill-green { background: #0C4D38; color: #fff; box-shadow: 0 0 8px rgba(12,77,56,0.4); border-color: #0C4D38; }
+    .color-pill.active.color-pill-blue { background: #0E437C; color: #fff; box-shadow: 0 0 8px rgba(14,67,124,0.4); border-color: #0E437C; }
+
+    /* ── Product Images Stack (Grid layout: 1 full + 2x2 grid) ── */
+    .product-images-stack {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4px;
+      background: var(--parchment-dark);
+      width: 100%;
+    }
+    .stack-item {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      background: #FFF;
+      cursor: zoom-in;
+      transition: opacity 0.15s ease;
+    }
+    .stack-item:active {
+      opacity: 0.85;
+    }
+    #stack-black {
+      grid-column: span 2;
+    }
+    .stack-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Scarcity bar ── */
+    .scarcity-bar-inner {
+      height: 100%;
+      background: linear-gradient(90deg, var(--burgundy), var(--burgundy-light));
+      border-radius: 999px;
+      transition: width 1.5s cubic-bezier(.4,0,.2,1);
+      width: 0%;
+    }
+
+    /* ── Bundle cards ── */
+    .bundle-card {
+      border: 2px solid var(--parchment-mid);
+      background: var(--parchment);
+      border-radius: 16px;
+      padding: 24px 20px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .bundle-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 32px var(--shadow-warm);
+      transform: translateY(-2px);
+    }
+    .bundle-card.selected {
+      border-color: var(--burgundy);
+      background: #FDF5F6;
+      box-shadow: 0 8px 32px var(--shadow-warm);
+    }
+    .bundle-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--burgundy);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 16px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .bundle-badge.gold {
+      background: linear-gradient(90deg, var(--gold), #B8912A);
+      color: var(--ink);
+    }
+
+    /* ── CTA Button ── */
+    @keyframes ctaShimmer {
+      0% { transform: translateX(-150%) skewX(-25deg); }
+      100% { transform: translateX(150%) skewX(-25deg); }
+    }
+    .cta-btn {
+      background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-light) 100%);
+      color: #fff;
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      letter-spacing: 0.02em;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 6px 24px rgba(107,29,42,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+      );
+      transform: translateX(-150%) skewX(-25deg);
+      animation: ctaShimmer 3.5s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 32px rgba(107,29,42,0.45);
+    }
+    .cta-btn:active { transform: translateY(0) scale(1); }
+
+    /* ── Review card ── */
+    .review-card {
+      background: var(--parchment);
+      border: 1px solid var(--parchment-mid);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(107,29,42,0.07);
+    }
+    .review-ugc {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: var(--parchment-dark);
+    }
+
+    /* ── Star rating ── */
+    .stars { color: #C9A96E; letter-spacing: 2px; }
+
+    /* ── Input fields ── */
+    .form-input {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid var(--parchment-mid);
+      border-radius: 12px;
+      background: #fff;
+      font-size: 1rem;
+      font-family: 'Nunito', sans-serif;
+      color: var(--ink);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--burgundy);
+    }
+    .form-input::placeholder { color: var(--ink-light); }
+
+    /* ── Section backgrounds ── */
+    .bg-parchment { background-color: var(--parchment); }
+    .bg-parchment-dark { background-color: var(--parchment-dark); }
+    .bg-burgundy-section {
+      background: linear-gradient(160deg, var(--burgundy) 0%, #3D0D18 100%);
+    }
+
+    /* ── Top ribbon ── */
+    .top-ribbon {
+      background: var(--burgundy);
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px 16px;
+    }
+
+    /* ── Floating order bar (mobile sticky) ── */
+    .sticky-order-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--parchment);
+      border-top: 2px solid var(--parchment-mid);
+      padding: 12px 20px;
+      box-shadow: 0 -8px 32px rgba(107,29,42,0.15);
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .sticky-order-bar.visible { transform: translateY(0); }
+
+    /* ── Faith quote block ── */
+    .faith-block {
+      border-left: 4px solid var(--gold);
+      padding: 20px 24px;
+      background: linear-gradient(90deg, rgba(201,169,110,0.08), transparent);
+      border-radius: 0 12px 12px 0;
+    }
+
+    /* ── Guarantee icons ── */
+    .guarantee-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 12px;
+      background: rgba(201,169,110,0.08);
+      border: 1px solid rgba(201,169,110,0.2);
+    }
+
+    /* ── Floating particles ── */
+    @keyframes floatUp {
+      0% { opacity: 0; transform: translateY(20px) rotate(-5deg); }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-60px) rotate(5deg); }
+    }
+
+    /* ── Scroll fade-in ── */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Word reveal animation ── */
+    .fade-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(4px);
+      animation: revealWord 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+    @keyframes revealWord {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── Ornament ── */
+    .ornament {
+      color: var(--gold);
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+
+
+
+
+    /* ── Trust badge strip ── */
+    .trust-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+    }
+    .trust-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(201,169,110,0.12);
+      border-radius: 50%;
+      border: 1px solid rgba(201,169,110,0.3);
+      font-size: 1.4rem;
+    }
+
+    /* ── Success overlay ── */
+    #success-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28,16,8,0.8);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #success-overlay.show { display: flex; }
+    .success-box {
+      background: var(--parchment);
+      border-radius: 20px;
+      padding: 24px 20px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      border: 2px solid var(--gold);
+      max-height: 95vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 50px rgba(28, 16, 8, 0.3);
+    }
+
+    /* ── Max width wrapper ── */
+    .container { max-width: 520px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── Price display ── */
+    .price-old {
+      text-decoration: line-through;
+      color: var(--ink-light);
+      font-size: 0.9rem;
+    }
+    .price-new {
+      color: var(--burgundy);
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    /* responsive tweaks */
+    @media (max-width: 400px) {
+      .cta-btn { font-size: 1rem; padding: 16px 24px; }
+    }
+
+    /* ── Animated cross ── */
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 8px rgba(201,169,110,0.3); }
+      50% { text-shadow: 0 0 24px rgba(201,169,110,0.7); }
+    }
+    .glow-cross { animation: glowPulse 3s ease-in-out infinite; }
+    
+    /* ── Scarcity number pulse animation ── */
+    @keyframes pulseNumber {
+      0% { transform: scale(1); }
+      30% { transform: scale(1.35); color: var(--burgundy-light); text-shadow: 0 0 10px rgba(107,29,42,0.2); }
+      100% { transform: scale(1); }
+    }
+    .pulse-number {
+      display: inline-block;
+      animation: pulseNumber 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* ── Product gallery thumbnail styles ── */
+    .thumb-item {
+      position: relative;
+      flex: 0 0 calc((100% - 16px) / 5);
+      width: calc((100% - 16px) / 5);
+      aspect-ratio: 1;
+      background: #FFF;
+      cursor: pointer;
+      border: 2px solid transparent;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+    .thumb-item.active {
+      border-color: var(--gold) !important;
+    }
+    .faq-telegram-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--burgundy) !important;
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1.5px solid var(--burgundy);
+      width: 100%;
+      box-sizing: border-box;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- GTM BODY PLACEHOLDER -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WX296MT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ═══════════════════════════════════════════
+     TOP RIBBON
+═══════════════════════════════════════════ -->
+<div class="top-ribbon">
+  ✦ БЛАГОСЛОВЕННЯ З ОСТРОВА КОРФУ &nbsp;·&nbsp; СОРОКОУСТ НА МОЩАХ СВЯТОГО СПИРИДОНА ✦
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section style="background: linear-gradient(180deg, var(--parchment-dark) 0%, var(--parchment) 100%); padding: 0;">
+
+  <!-- ── Interactive Product Gallery ── -->
+  <div class="product-gallery-container" style="background: var(--parchment-dark); padding: 0 0 16px 0;">
+    
+    <!-- Main Display Image -->
+    <div class="gallery-main-display" style="position: relative; width: 100%; aspect-ratio: 1; background: #FFF; cursor: zoom-in; overflow: hidden;" onclick="openMainImageLightbox()">
+      <img id="gallery-main-img" src="black-1.webp" alt="Комбоскіні оберіг" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.15s ease-in-out;">
+      
+      <!-- Color Badge -->
+      <div style="position: absolute; top: 16px; right: 16px; background: rgba(28, 16, 8, 0.75); color: #FAF7F0; font-size: 0.8rem; font-weight: 600; padding: 6px 12px; border-radius: 20px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(237, 229, 208, 0.2); letter-spacing: 0.04em;">
+        Колір: <span id="gallery-color-label">Чорний</span>
+      </div>
+    </div>
+
+    <!-- Thumbnails Grid -->
+    <div class="gallery-thumbnails-grid" style="display: flex; flex-direction: column; gap: 4px; padding: 4px 0 0 0; background: var(--parchment-dark);">
+      <!-- Row 1: Church Background -->
+      <div style="display: flex; gap: 4px; width: 100%;">
+        <div class="thumb-item active" data-index="0" data-src="black-1.webp" data-color="Чорний" onclick="selectGalleryItem(this)">
+          <img src="black-1.webp" alt="Чорний (Вівтар)" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="thumb-item" data-index="1" data-src="red-1.webp" data-color="Бордовий" onclick="selectGalleryItem(this)">
+          <img src="red-1.webp" alt="Бордовий (Вівтар)" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="thumb-item" data-index="2" data-src="red-variant.webp" data-color="Червоний" onclick="selectGalleryItem(this)">
+          <img src="red-variant.webp" alt="Червоний (Вівтар)" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="thumb-item" data-index="3" data-src="blue-1.webp" data-color="Синій" onclick="selectGalleryItem(this)">
+          <img src="blue-1.webp" alt="Синій (Вівтар)" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="thumb-item" data-index="4" data-src="green-1.webp" data-color="Смарагдовий" onclick="selectGalleryItem(this)">
+          <img src="green-1.webp" alt="Смарагдовий (Вівтар)" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+      </div>
+
+      <!-- Row 2: Beige Background -->
+      <div style="display: flex; gap: 4px; width: 100%;">
+        <div class="thumb-item" data-index="5" data-src="tile-black.webp" data-color="Чорний" onclick="selectGalleryItem(this)">
+          <img src="tile-black.webp" alt="Чорний" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="thumb-item" data-index="6" data-src="tile-burgundy.webp" data-color="Бордовий" onclick="selectGalleryItem(this)">
+          <img src="tile-burgundy.webp" alt="Бордовий" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="thumb-item" data-index="7" data-src="tile-red.webp" data-color="Червоний" onclick="selectGalleryItem(this)">
+          <img src="tile-red.webp" alt="Червоний" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="thumb-item" data-index="8" data-src="tile-blue.webp" data-color="Синій" onclick="selectGalleryItem(this)">
+          <img src="tile-blue.webp" alt="Синій" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div class="thumb-item" data-index="9" data-src="tile-green.webp" data-color="Смарагдовий" onclick="selectGalleryItem(this)">
+          <img src="tile-green.webp" alt="Смарагдовий" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Headline & Sub (below the gallery) ── -->
+  <div class="container text-center" style="padding-top: 24px; padding-bottom: 12px;">
+
+    <h1 class="text-center mb-4" style="color: var(--ink); font-size: clamp(2.05rem, 7.5vw, 2.9rem); line-height: 1.25; font-weight: 700;">
+      Комбоскіні з<br/>
+      <span style="color: var(--burgundy);">Черевичком<br/>Святого Спиридона</span>
+    </h1>
+
+    <p class="text-center mb-2" style="color: var(--ink-muted); font-size: clamp(1.02rem, 3.5vw, 1.15rem); font-weight: 700; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+      <span class="fade-word" style="animation-delay: 0.1s;">Всередині</span> <span class="fade-word" style="animation-delay: 0.18s;">оригінальне</span> <strong class="fade-word" style="animation-delay: 0.26s; color: var(--ink-muted); font-weight: 700;">філахто</strong> <span class="fade-word" style="animation-delay: 0.34s;">—</span> <span class="fade-word" style="animation-delay: 0.42s;">частинка</span> <span class="fade-word" style="animation-delay: 0.5s;">благодатного</span> <span class="fade-word" style="animation-delay: 0.58s;">оксамиту,</span> <span class="fade-word" style="animation-delay: 0.66s;">освяченого</span> <span class="fade-word" style="animation-delay: 0.74s;">протягом</span> <span class="fade-word" style="animation-delay: 0.82s;">40</span> <span class="fade-word" style="animation-delay: 0.9s;">днів</span> <span class="fade-word" style="animation-delay: 0.98s;">на</span> <span class="fade-word" style="animation-delay: 1.06s;">мощах</span> <span class="fade-word" style="animation-delay: 1.14s;">Святого</span> <span class="fade-word" style="animation-delay: 1.22s;">Спиридона</span> <span class="fade-word" style="animation-delay: 1.3s;">у</span> <span class="fade-word" style="animation-delay: 1.38s;">соборі</span> <span class="fade-word" style="animation-delay: 1.46s;">на</span> <span class="fade-word" style="animation-delay: 1.54s;">Корфу.</span>
+    </p>
+  </div>
+
+  <div class="container" style="padding-top: 20px; padding-bottom: 40px;">
+    <!-- Documents Image Section -->
+    <div class="mb-4 rounded-2xl overflow-hidden fade-in-up" style="border: 1px solid var(--parchment-mid); box-shadow: 0 8px 24px rgba(107,29,42,0.08);">
+      <img src="documents.webp" alt="Офіційні сертифікати та дозволи від Митрополії Корфу" class="w-full" style="display: block;">
+    </div>
+
+    <!-- Trust micro-line -->
+    <p class="text-center mb-6" style="font-size: 0.8rem; color: var(--ink-light); max-width: 420px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+      Сертифікат на вироби та офіційний лист про надання прав на співпрацю від Митрополії Корфу, Паксі та Діапонтійських островів.
+    </p>
+
+    <!-- ── Hero CTA ── -->
+    <button class="cta-btn" id="hero-cta" onclick="scrollToOrder(this)" data-location="hero" data-gtm="hero_cta_click">
+      Замовити зараз →
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW TO WEAR
+═══════════════════════════════════════════ -->
+<section id="how-to-wear-section" style="background: var(--parchment); padding: 56px 0; border-bottom: 1px solid var(--parchment-mid);">
+  <div class="container">
+    
+    <div class="divider-cross"><span class="glow-cross">✝</span></div>
+
+    <h2 class="text-center mb-6 fade-in-up" style="font-size: clamp(1.4rem, 5vw, 2rem); color: var(--burgundy); line-height: 1.3;">
+      Як правильно надягати<br/>комбоскіні?
+    </h2>
+
+    <!-- Wear video -->
+    <div class="mb-6 rounded-2xl overflow-hidden fade-in-up" style="border: 1px solid var(--parchment-mid); box-shadow: 0 8px 32px rgba(107,29,42,0.1);">
+      <video
+        src="wear-video.mp4"
+        class="w-full"
+        style="display: block;"
+        autoplay
+        loop
+        muted
+        playsinline
+        controls
+        preload="metadata"
+      ></video>
+      <div style="padding: 14px 20px; background: var(--parchment-dark);">
+        <p style="font-size: 0.8rem; color: var(--ink-light); font-style: italic; text-align: center;">
+          Відео-інструкція: як правильно одягати та фіксувати оберіг на зап'ясті
+        </p>
+        <div style="margin-top: 8px; border-top: 1px dashed var(--parchment-mid); padding-top: 8px; font-size: 0.85rem; color: var(--burgundy); text-align: center; font-weight: 700; line-height: 1.4;">
+          💡 Корисна порада: якщо оберіг важко надягається, розм'якшіть його у гарячій воді — тоді він піде набагато легше.
+        </div>
+      </div>
+    </div>
+
+    <!-- Instruction text card -->
+    <div class="faith-block mb-4 fade-in-up" style="background: var(--parchment-dark); border: 1px solid var(--parchment-mid); border-radius: 16px; padding: 24px 20px; box-shadow: inset 0 0 12px rgba(107,29,42,0.02);">
+      <p class="fell" style="font-style: italic; font-size: 1.12rem; color: var(--ink-muted); line-height: 1.7; margin: 0; text-align: center;">
+        «За православною традицією комбоскіні носять на лівій руці — ближче до серця. Браслет надягається через долоню повільними, плавними рухами. Під час одягання прийнято подумки прочитати коротку молитву (наприклад, "Господи Ісусе Христе, помилуй мене" або звернутися до Святого Спиридона). Щойно комбоскіні опиниться на зап'ясті, легенько обтисніть пальцями кожен вузлик по колу — це поверне плетінню початкову щільність, і оберіг ідеально зафіксується».
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STORY / ORIGIN
+═══════════════════════════════════════════ -->
+<section class="bg-parchment-dark" style="padding: 56px 0;">
+  <div class="container">
+
+    <div class="divider-cross" id="trigger-cross"><span class="glow-cross">✝</span></div>
+
+    <h2 class="text-center mb-6 fade-in-up" style="font-size: clamp(1.4rem, 5vw, 2rem); color: var(--burgundy); line-height: 1.3;">
+      Звідки береться сила<br/>цього оберегу?
+    </h2>
+
+    <!-- Saint video -->
+    <div class="mb-6 rounded-2xl overflow-hidden fade-in-up" style="border: 1px solid var(--parchment-mid); box-shadow: 0 8px 32px rgba(107,29,42,0.1);">
+      <video
+        src="church-video.mp4"
+        class="w-full"
+        style="display: block;"
+        autoplay
+        loop
+        muted
+        playsinline
+        controls
+        preload="metadata"
+      ></video>
+      <div style="padding: 14px 20px; background: var(--parchment);">
+        <p style="font-size: 0.8rem; color: var(--ink-light); font-style: italic; text-align: center;">
+          Собор Святого Спиридона, острів Корфу — місце, де зберігаються нетлінні мощі святого
+        </p>
+      </div>
+    </div>
+
+    <!-- Story text -->
+    <div class="faith-block mb-5 fade-in-up">
+      <p class="fell" style="font-style: italic; font-size: 1.15rem; color: var(--ink-muted); line-height: 1.7;">
+        «Святий Спиридон Триміфунтський — один із найбільш шанованих святих у православному світі. Його мощі нетлінно збереглися на острові Корфу вже понад 500 років. Щороку до нього їдуть сотні тисяч вірян — за зціленням, підтримкою і надією.»
+      </p>
+    </div>
+
+    <p class="mb-5 fade-in-up" style="color: var(--ink-muted); font-size: 0.97rem;">
+      Кожен браслет <strong>Комбоскіні</strong> створюється грецькими майстрами на острові Корфу за благословенням священнослужителів. У кулон-черевичок закладається справжня святиня — крихітна частинка <em>філахто</em> (шматочок оксамитового взуття, що освячувалося безпосередньо на нетлінних мощах Святого Спиридона Чудотворця).
+    </p>
+
+    <p class="mb-5 fade-in-up" style="color: var(--ink-muted); font-size: 0.97rem;">
+      Це не прикраса. Це <strong>фізичний зв'язок із святинею</strong> — щось, що ви можете тримати на зап'ясті щодня: під час молитви, в дорозі, вдома, разом із сім'єю.
+    </p>
+
+    <!-- Second product image -->
+    <div class="rounded-2xl overflow-hidden mb-5 fade-in-up" style="border: 1px solid var(--parchment-mid); box-shadow: 0 8px 24px rgba(107,29,42,0.1);">
+      <img
+        src="macro-charm.webp"
+        alt="Черевичок з філахто всередині"
+        class="w-full"
+        style="display: block;"
+        loading="lazy"
+      />
+      <div style="padding: 12px 20px; background: var(--parchment);">
+        <p style="font-size: 0.78rem; color: var(--ink-light); font-style: italic; text-align: center;">
+          Всередині сріблястого черевичка — крихітний шматочок філахто: оксамитової тканини від черевичків, що перебували на мощах Святого Спиридона.
+        </p>
+      </div>
+    </div>
+
+    <div class="divider-cross"><span class="glow-cross">✝</span></div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BENEFITS / WHY
+═══════════════════════════════════════════ -->
+<section style="padding: 48px 0; background: var(--parchment);">
+  <div class="container">
+
+    <h2 class="text-center mb-2 fade-in-up" style="font-size: clamp(1.3rem, 5vw, 1.9rem); color: var(--ink);">
+      Чому обирають цей оберіг<br/>саме зараз?
+    </h2>
+    <p class="text-center mb-8 fade-in-up" style="color: var(--ink-light); font-size: 0.9rem;">
+      Не магія. Не обіцянки. Просто — справжній духовний якір.
+    </p>
+
+    <!-- Benefit list -->
+    <div style="display: flex; flex-direction: column; gap: 16px;">
+
+      <div class="guarantee-item fade-in-up">
+        <span style="font-size: 1.8rem; flex-shrink: 0; margin-top: 2px;">🕊️</span>
+        <div>
+          <p style="font-weight: 700; color: var(--ink); margin-bottom: 4px; font-family: 'Lora', serif;">Внутрішня опора та спокій</p>
+          <p style="font-size: 0.9rem; color: var(--ink-muted);">Ваш особистий духовний якір у тривожні часи. Дотик до щільних вузликів комбоскіні допомагає зупинити потік паніки, видихнути та повернути душевний мир через щиру молитву.</p>
+        </div>
+      </div>
+
+      <div class="guarantee-item fade-in-up">
+        <span style="font-size: 1.8rem; flex-shrink: 0; margin-top: 2px;">⛪</span>
+        <div>
+          <p style="font-weight: 700; color: var(--ink); margin-bottom: 4px; font-family: 'Lora', serif;">Сила 40-денного освячення</p>
+          <p style="font-size: 0.9rem; color: var(--ink-muted);">Всередині черевичка — справжнє філахто. Це частинка оксамитової тканини, яка повний сорокоуст (40 днів) безперервно освячувалася безпосередньо на нетлінних мощах Святого Спиридона на Корфу.</p>
+        </div>
+      </div>
+
+      <div class="guarantee-item fade-in-up">
+        <span style="font-size: 1.8rem; flex-shrink: 0; margin-top: 2px;">🏡</span>
+        <div>
+          <p style="font-weight: 700; color: var(--ink); margin-bottom: 4px; font-family: 'Lora', serif;">Покровитель дому та родини</p>
+          <p style="font-size: 0.9rem; color: var(--ink-muted);">Святий Спиридон — захисник сімейного вогнища, який допомагає у життєвих, побутових та фінансових труднощах. Оберіг несе в дім лад, мир та благословення Чудотворця.</p>
+        </div>
+      </div>
+
+      <div class="guarantee-item fade-in-up">
+        <span style="font-size: 1.8rem; flex-shrink: 0; margin-top: 2px;">🛡️</span>
+        <div>
+          <p style="font-weight: 700; color: var(--ink); margin-bottom: 4px; font-family: 'Lora', serif;">Молитовний захист на відстані</p>
+          <p style="font-size: 0.9rem; color: var(--ink-muted);">Духовний щит для тих, хто зараз далеко. Видимий прояв вашої любові та турботи про чоловіка, дітей чи батьків, який оберігає найрідніших, навіть коли ви не поруч.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SOCIAL PROOF / REVIEWS
+═══════════════════════════════════════════ -->
+<section style="padding: 56px 0; background: var(--parchment);">
+  <div class="container">
+
+    <div class="divider-cross"><span class="glow-cross">✝</span></div>
+
+    <h2 class="text-center mb-2 fade-in-up" style="font-size: clamp(1.3rem, 5vw, 1.9rem); color: var(--ink);">
+      Що кажуть ті, хто вже<br/>носить оберіг
+    </h2>
+    <p class="text-center mb-8 fade-in-up" style="color: var(--ink-light); font-size: 0.88rem;">
+      Реальні відгуки реальних людей
+    </p>
+
+    <!-- Reviews -->
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+
+      <!-- Review 1 -->
+      <div class="review-card fade-in-up">
+        <img
+          class="review-ugc"
+          src="ugc-wrist-black.webp"
+          alt="Відгук — чорний браслет на зап'ясті"
+          loading="lazy"
+        />
+        <div style="padding: 20px;">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="stars">★★★★★</span>
+            <span style="font-size: 0.78rem; color: var(--ink-light);">5/5</span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--ink-muted); margin-bottom: 12px; font-style: italic;">
+            «Замовляла для мами — вона дуже переймається через ситуацію в країні. Коли побачила браслет і прочитала про філахто, розплакалась. Каже, що відчула якийсь спокій. Дякую вам від щирого серця.»
+          </p>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--parchment-mid); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--burgundy); font-size: 0.85rem;">О</div>
+            <div>
+              <p style="font-weight: 700; font-size: 0.88rem; color: var(--ink);">Оксана К.</p>
+              <p style="font-size: 0.75rem; color: var(--ink-light);">Київ · 3 тижні тому</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card fade-in-up">
+        <img
+          class="review-ugc"
+          src="ugc-wrist-red.webp"
+          alt="Відгук — бордовий браслет поруч з іконою"
+          loading="lazy"
+        />
+        <div style="padding: 20px;">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="stars">★★★★★</span>
+            <span style="font-size: 0.78rem; color: var(--ink-light);">5/5</span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--ink-muted); margin-bottom: 12px; font-style: italic;">
+            «Взяла одразу три — собі, чоловіку і свекрусі. Якість чудова, плетіння щільне, черевичок маленький і дуже гарний. Доставка прийшла швидко — 3 дні. Буду рекомендувати подругам!»
+          </p>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--parchment-mid); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--burgundy); font-size: 0.85rem;">Н</div>
+            <div>
+              <p style="font-weight: 700; font-size: 0.88rem; color: var(--ink);">Наталія В.</p>
+              <p style="font-size: 0.75rem; color: var(--ink-light);">Полтава · 1 місяць тому</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card fade-in-up">
+        <img
+          class="review-ugc"
+          src="ugc-wrist-table.webp"
+          alt="Відгук — два браслети"
+          loading="lazy"
+        />
+        <div style="padding: 20px;">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="stars">★★★★★</span>
+            <span style="font-size: 0.78rem; color: var(--ink-light);">5/5</span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--ink-muted); margin-bottom: 12px; font-style: italic;">
+            «Ношу вже два місяці. Не знаю як пояснити, але стала спокійніше. Менше тривоги вночі. Мій чоловік також взяв — він не дуже вірячий, але і він оцінив ідею. Дякую, що берегли традицію.»
+          </p>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--parchment-mid); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--burgundy); font-size: 0.85rem;">Т</div>
+            <div>
+              <p style="font-weight: 700; font-size: 0.88rem; color: var(--ink);">Тетяна М.</p>
+              <p style="font-size: 0.75rem; color: var(--ink-light);">Дніпро · 2 місяці тому</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Star summary -->
+    <div class="mt-8 p-5 rounded-2xl text-center fade-in-up" style="background: var(--parchment-dark); border: 1px solid var(--parchment-mid);">
+      <p class="fell" style="font-size: 2.5rem; color: var(--burgundy); font-weight: 700; line-height: 1;">4.9</p>
+      <div class="stars" style="font-size: 1.4rem; margin: 4px 0;">★★★★★</div>
+      <p style="font-size: 0.85rem; color: var(--ink-light);">на основі 247 відгуків</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PRICING / BUNDLES + ORDER FORM
+═══════════════════════════════════════════ -->
+<section id="order" style="padding: 56px 0; background: linear-gradient(180deg, var(--parchment-dark) 0%, var(--parchment) 100%);">
+  <div class="container">
+
+    <div class="divider-cross"><span class="glow-cross">✝</span></div>
+
+    <h2 class="text-center mb-2 fade-in-up" style="font-size: clamp(1.3rem, 5vw, 2rem); color: var(--ink);">
+      Оберіть свій варіант
+    </h2>
+    <p class="text-center mb-8 fade-in-up" style="color: var(--ink-light); font-size: 0.9rem;">
+      Спільний захист для сім'ї за особливою ціною. Кожен оберіг наділений повною благодаттю 40-денного освячення.
+    </p>
+
+    <!-- Bundle grid -->
+    <div id="bundle-grid" style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+
+      <!-- Option 1 -->
+      <div class="bundle-card fade-in-up" id="bundle-1" onclick="selectBundle(1)">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+          <div>
+            <p style="font-family:'Lora',serif; font-weight:700; font-size:1.05rem; color:var(--ink); margin-bottom:4px;">🙏 Один оберіг</p>
+            <p style="font-size:0.82rem; color:var(--ink-light); margin-bottom:8px;">Для себе або одного близького</p>
+            <span class="price-old">1 290 ₴</span>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <p class="price-new">890 ₴</p>
+            <p style="font-size:0.72rem; color:var(--ink-light);">за 1 шт</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 2 — Most popular -->
+      <div class="bundle-card fade-in-up" id="bundle-2" onclick="selectBundle(2)" style="padding-top: 32px;">
+        <div class="bundle-badge">⭐ Найчастіший вибір</div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+          <div>
+            <p style="font-family:'Lora',serif; font-weight:700; font-size:1.05rem; color:var(--ink); margin-bottom:4px;">💑 Пара оберегів</p>
+            <p style="font-size:0.82rem; color:var(--ink-light); margin-bottom:8px;">Для вас і вашого чоловіка / близької людини</p>
+            <span class="price-old">2 580 ₴</span>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <p class="price-new">1 690 ₴</p>
+            <p style="font-size:0.72rem; color: #16a34a; font-weight:700;">Економія 890 ₴</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option 3 — Best value -->
+      <div class="bundle-card fade-in-up" id="bundle-3" onclick="selectBundle(3)" style="padding-top: 32px;">
+        <div class="bundle-badge gold">🌟 Максимальна вигода</div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
+          <div>
+            <p style="font-family:'Lora',serif; font-weight:700; font-size:1.05rem; color:var(--ink); margin-bottom:4px;">👨‍👩‍👧 Сімейний (3 шт)</p>
+            <p style="font-size:0.82rem; color:var(--ink-light); margin-bottom:8px;">Для всієї сім'ї або на подарунок</p>
+            <span class="price-old">3 870 ₴</span>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <p class="price-new">2 490 ₴</p>
+            <p style="font-size:0.72rem; color: #16a34a; font-weight:700;">Економія 1 380 ₴</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── Dynamic Color Selectors ── -->
+    <div id="color-selectors-container" class="mb-5 fade-in-up">
+      <!-- Dynamically rendered by JS -->
+    </div>
+
+    <!-- ══ LEAD CAPTURE FORM ══ -->
+    <div class="p-5 rounded-2xl fade-in-up" style="background: #FFF9F5; border: 2px solid var(--parchment-mid); box-shadow: 0 8px 32px rgba(107,29,42,0.08);">
+      <h3 class="mb-1" style="font-size: 1.15rem; color: var(--burgundy);">Замовлення</h3>
+      <p class="mb-5" style="font-size: 0.85rem; color: var(--ink-light);">Наш менеджер зателефонує, підтвердить замовлення і відповість на будь-які запитання.</p>
+
+      <div id="order-form">
+        <!-- Dynamic context sub-headline -->
+        <div id="checkout-context-headline" class="mb-4 text-center font-bold text-sm" style="color: var(--burgundy); font-family: 'Lora', serif; padding: 10px; background: var(--parchment-dark); border-radius: 8px; border: 1px solid var(--parchment-mid);">
+          Будь ласка, оберіть варіант оберегу вище
+        </div>
+
+
+        <div class="mb-4">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--ink); margin-bottom:8px;">Ваше прізвище та ім'я *</label>
+          <input
+            type="text"
+            id="field-name"
+            class="form-input"
+            placeholder="Наприклад: Герасименко Оксана"
+            autocomplete="name"
+          />
+          <p id="err-name" style="display:none; color: #c0392b; font-size:0.78rem; margin-top:4px;">Будь ласка, введіть ваше прізвище та ім'я</p>
+        </div>
+
+        <div class="mb-4">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--ink); margin-bottom:8px;">Номер телефону *</label>
+          <input
+            type="tel"
+            id="field-phone"
+            class="form-input"
+            placeholder="+380 (__) ___-__-__"
+            autocomplete="tel"
+          />
+          <p id="err-phone" style="display:none; color: #c0392b; font-size:0.78rem; margin-top:4px;">Будь ласка, введіть коректний номер</p>
+        </div>
+
+        <div class="mb-5">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--ink); margin-bottom:8px;">Місто та відділення пошти: *</label>
+          <input
+            type="text"
+            id="field-shipping"
+            class="form-input"
+            placeholder="Наприклад: м. Київ, відділення №128"
+          />
+          <p id="err-shipping" style="display:none; color: #c0392b; font-size:0.78rem; margin-top:4px;">Будь ласка, введіть місто та відділення пошти</p>
+        </div>
+
+        <button
+          class="cta-btn"
+          id="submit-btn"
+          onclick="submitOrder(event)"
+          data-gtm="order_form_submit"
+        >
+          Замовити зараз →
+        </button>
+
+        <p class="text-center mt-3" style="font-size: 0.78rem; color: var(--ink-light);">
+          Натискаючи «Замовити», ви погоджуєтесь на обробку персональних даних. Без спаму.
+        </p>
+        <p class="text-center mt-1.5" style="font-size: 0.68rem; color: var(--ink-light); opacity: 0.7; font-style: italic;">
+          * — обов'язкові для заповнення поля
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TRUST & GUARANTEES
+═══════════════════════════════════════════ -->
+<section class="bg-parchment-dark" style="padding: 48px 0;">
+  <div class="container">
+
+    <h2 class="text-center mb-8 fade-in-up" style="font-size: clamp(1.2rem, 4.5vw, 1.7rem); color: var(--ink);">
+      Чому нам довіряють
+    </h2>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+
+      <div class="trust-badge fade-in-up">
+        <div class="trust-icon">🏛️</div>
+        <p style="font-size: 0.8rem; font-weight: 700; color: var(--ink);">Справжній Корфу</p>
+        <p style="font-size: 0.75rem; color: var(--ink-light); text-align:center;">Кожен комбоскіні сплетений грецькими майстрами на острові Корфу та проходить благодатне 40-денне освячення безпосередньо на мощах Чудотворця.</p>
+      </div>
+
+      <div class="trust-badge fade-in-up">
+        <div class="trust-icon">📜</div>
+        <p style="font-size: 0.8rem; font-weight: 700; color: var(--ink);">Благословення Митрополії</p>
+        <p style="font-size: 0.75rem; color: var(--ink-light); text-align:center;">Вироби офіційно схвалені та сертифіковані Митрополією Корфу, Паксі та Діапонтійських островів, що гарантує їхнє духовне походження.</p>
+      </div>
+
+      <div class="trust-badge fade-in-up">
+        <div class="trust-icon">✋</div>
+        <p style="font-size: 0.8rem; font-weight: 700; color: var(--ink);">Святиня всередині</p>
+        <p style="font-size: 0.75rem; color: var(--ink-light); text-align:center;">Металевий кулон-черевичок не є порожнім — усередині кожного оберега надійно збережена справжня частинка оксамитового філахто із собору.</p>
+      </div>
+
+      <div class="trust-badge fade-in-up">
+        <div class="trust-icon">💳</div>
+        <p style="font-size: 0.8rem; font-weight: 700; color: var(--ink);">Оплата при отриманні</p>
+        <p style="font-size: 0.75rem; color: var(--ink-light); text-align:center;">Жодних ризиків та передоплат. Спочатку ви спокійно оглядаєте браслет та перевіряєте якість у відділенні пошти, і лише потім сплачуєте.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════ -->
+<section style="padding: 48px 0; background: var(--parchment);">
+  <div class="container">
+
+    <h2 class="text-center mb-8 fade-in-up" style="font-size: clamp(1.2rem, 4.5vw, 1.7rem); color: var(--ink);">
+      Часті запитання
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+
+      <details class="fade-in-up" style="border: 1px solid var(--parchment-mid); border-radius: 12px; overflow: hidden; background: var(--parchment);">
+        <summary style="padding: 18px 20px; font-weight: 700; font-size: 0.95rem; color: var(--ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          Чи оригінальні ваші вироби та як це перевірити?
+          <span style="color: var(--gold); font-size: 1.3rem; flex-shrink:0; margin-left:8px;">+</span>
+        </summary>
+        <div style="padding: 0 20px 18px; font-size: 0.9rem; color: var(--ink-muted);">
+          «Так, абсолютно. Ми представляємо виключно оригінальні вироби Комбоскіні, які привозяться з острова Корфу лімітованими партіями. На сайті відкрито представлені офіційні сертифікати відповідності та листи-дозволи від Митрополії Корфу, Паксі та Діапонтійських островів. Головна гарантія справжності — це наявність усередині кулона-черевичка оригінального філахто (шматочка оксамиту), який протягом 40 днів безперервно освячувався безпосередньо на нетлінних мощах Святого Спиридона. Ви можете особисто оглянути виріб та переконатися в його автентичності під час отримання на пошті».
+        </div>
+      </details>
+
+      <details class="fade-in-up" style="border: 1px solid var(--parchment-mid); border-radius: 12px; overflow: hidden; background: var(--parchment);">
+        <summary style="padding: 18px 20px; font-weight: 700; font-size: 0.95rem; color: var(--ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          Яким є розмір браслету?
+          <span style="color: var(--gold); font-size: 1.3rem; flex-shrink:0; margin-left:8px;">+</span>
+        </summary>
+        <div style="padding: 0 20px 18px; font-size: 0.9rem; color: var(--ink-muted);">
+          «Браслети мають універсальний розмір. Завдяки традиційній технології канонічного плетіння 60 вузлів, вони є еластичними: під час першого одягання нитки м'яко тягнуться й ідеально фіксуються за формою руки. Браслет однаково комфортно лягає як на витончене жіноче, так і на міцне чоловіче зап'ястя».
+        </div>
+      </details>
+
+      <details class="fade-in-up" style="border: 1px solid var(--parchment-mid); border-radius: 12px; overflow: hidden; background: var(--parchment);">
+        <summary style="padding: 18px 20px; font-weight: 700; font-size: 0.95rem; color: var(--ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          Як правильно надягати комбоскіні?
+          <span style="color: var(--gold); font-size: 1.3rem; flex-shrink:0; margin-left:8px;">+</span>
+        </summary>
+        <div style="padding: 0 20px 18px; font-size: 0.9rem; color: var(--ink-muted);">
+          «За православною традицією комбоскіні носять на лівій руці — ближче до серця. Браслет надягається через долоню повільними, плавними рухами. Під час одягання прийнято подумки прочитати коротку молитву (наприклад, "Господи Ісусе Христе, помилуй мене" або звернутися до Святого Спиридона). Щойно комбоскіні опиниться на зап'ясті, легенько обтисніть пальцями кожен вузлик по колу — це поверне плетінню початкову щільність, і оберіг ідеально зафіксується».
+        </div>
+      </details>
+
+      <details class="fade-in-up" style="border: 1px solid var(--parchment-mid); border-radius: 12px; overflow: hidden; background: var(--parchment);">
+        <summary style="padding: 18px 20px; font-weight: 700; font-size: 0.95rem; color: var(--ink); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+          Як відбувається оплата?
+          <span style="color: var(--gold); font-size: 1.3rem; flex-shrink:0; margin-left:8px;">+</span>
+        </summary>
+        <div style="padding: 0 20px 18px; font-size: 0.9rem; color: var(--ink-muted);">
+          «Ми працюємо без жодних передоплат і ризиків для вас. Доставка здійснюється Новою Поштою або Укрпоштою за моделлю післяплати. Ви приходите у відділення, відкриваєте коробочку, тримаєте браслет у руках, оцінюєте якість плетіння та металевого черевичка, і лише після цього оплачуєте замовлення».
+        </div>
+      </details>
+
+      <a href="https://t.me/menegergraceheritage" target="_blank" rel="noopener" class="faq-telegram-btn fade-in-up" style="margin-top: 8px;">
+        Зв'язатися з менеджером
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════════ -->
+<section class="bg-burgundy-section" style="padding: 56px 0;">
+  <div class="container" style="text-align: center;">
+
+    <span class="glow-cross" style="font-size: 2.5rem; color: var(--gold); display:block; margin-bottom:16px;">✝</span>
+
+    <h2 class="fell mb-4" style="color: #FAF7F0; font-size: clamp(1.4rem, 5vw, 2rem); font-style: italic; line-height: 1.3;">
+      Дайте своїй родині<br/>духовну опору
+    </h2>
+
+    <p class="mb-6" style="color: rgba(250,247,240,0.75); font-size: 0.95rem; max-width: 340px; margin-left:auto; margin-right:auto;">
+      Ми живемо в часи, коли нам потрібна не лише матеріальна підтримка, але й духовна. Цей браслет — нагадування: ви не самі.
+    </p>
+
+    <button
+      class="cta-btn"
+      id="final-cta"
+      onclick="scrollToOrder(this)"
+      data-location="final_cta_section"
+      data-gtm="final_cta_click"
+      style="max-width: 360px; display: inline-block;"
+    >
+      Замовити зараз →
+    </button>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer style="padding: 40px 20px; background: #140D07; text-align: center; border-top: 1px solid rgba(201,169,110,0.15);">
+  <div class="container mx-auto max-w-xl">
+    <p class="fell" style="color: var(--gold); font-size: 1.15rem; font-style: italic; margin-bottom: 12px;">Святиня з Корфу</p>
+    
+    <p style="font-size: 0.78rem; color: rgba(250,247,240,0.4); line-height: 1.6; margin-bottom: 20px;">
+      Інформація на цьому сайті носить інформаційний та культурний характер. Ми не обіцяємо медичних або містичних результатів. Ми пропонуємо справжній духовний виріб із традиційною цінністю.
+    </p>
+    
+    <!-- Legal Links -->
+    <div class="flex flex-col items-center gap-y-2 mb-6 text-[0.78rem]" style="color: rgba(250,247,240,0.65);">
+      <a href="javascript:void(0)" onclick="openLegalModal('about')" class="block py-2 hover:text-white hover:underline transition-all duration-200">Про нас</a>
+      <a href="javascript:void(0)" onclick="openLegalModal('privacy')" class="block py-2 hover:text-white hover:underline transition-all duration-200">Політика конфіденційності</a>
+      <a href="javascript:void(0)" onclick="openLegalModal('terms')" class="block py-2 hover:text-white hover:underline transition-all duration-200">Договір публічної оферти</a>
+      <a href="javascript:void(0)" onclick="openLegalModal('delivery')" class="block py-2 hover:text-white hover:underline transition-all duration-200">Доставка, оплата та повернення</a>
+    </div>
+    
+    <p style="font-size: 0.72rem; color: rgba(250,247,240,0.25);">
+      © 2026 Grace Heritage. Усі права захищено.
+    </p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     STICKY BOTTOM BAR
+═══════════════════════════════════════════ -->
+<div class="sticky-order-bar" id="sticky-bar">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <div style="flex: 1;">
+      <p style="font-size: 0.75rem; color: var(--ink-light); line-height: 1.2;">Комбоскіні освячений з філахтою.</p>
+      <p style="font-family: 'Lora', serif; font-weight: 700; font-size: 1.1rem; color: var(--burgundy);">від 890 ₴</p>
+    </div>
+    <button
+      class="cta-btn"
+      id="sticky-cta"
+      onclick="scrollToOrder(this)"
+      data-location="sticky_bar"
+      data-gtm="sticky_cta_click"
+      style="width: auto; padding: 14px 24px; font-size: 0.95rem;"
+    >
+      Замовити →
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SUCCESS OVERLAY
+═══════════════════════════════════════════ -->
+<div id="success-overlay" onclick="closeSuccess()">
+  <div class="success-box" onclick="event.stopPropagation()">
+    <div style="font-size: 3rem; margin-bottom: 12px;">🙏</div>
+    <h3 style="font-family: 'Lora', serif; font-size: 1.4rem; color: var(--burgundy); margin-bottom: 8px;">Дякуємо, замовлення прийнято!</h3>
+    <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 16px; line-height: 1.5;">
+      Наш менеджер зателефонує вам найближчим часом для підтвердження. Зазвичай це займає до 1 години в робочий час.
+    </p>
+
+    <!-- Video Instruction Section -->
+    <div style="margin-bottom: 20px; text-align: center;">
+      <p style="font-size: 0.8rem; font-weight: 800; color: var(--burgundy); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; line-height: 1.4;">
+        Нагадування, як правильно надягати комбоскіні:
+      </p>
+      <div style="border-radius: 12px; overflow: hidden; border: 1.5px solid var(--gold); box-shadow: 0 4px 16px rgba(107,29,42,0.08); background: #000; margin-bottom: 10px;">
+        <video id="success-wear-video" src="wear-video.mp4" style="width: 100%; display: block;" loop muted playsinline controls></video>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--burgundy); font-weight: 700; line-height: 1.4; max-width: 380px; margin: 0 auto;">
+        💡 Корисна порада: якщо оберіг важко надягається, розм'якшіть його у гарячій воді — тоді він піде набагато легше.
+      </p>
+    </div>
+    
+    <!-- Order Summary Box -->
+    <div id="order-summary-box" style="margin-bottom: 20px; padding: 14px; background: var(--parchment-dark); border-radius: 12px; border: 1px solid var(--parchment-mid); font-size: 0.88rem; text-align: left; display: none;">
+      <p style="font-weight: 700; color: var(--ink); margin-bottom: 6px;">Ваше замовлення:</p>
+      <p id="summary-bundle" style="color: var(--burgundy); font-weight: 700; margin-bottom: 4px;"></p>
+      <p id="summary-colors" style="color: var(--ink-light); line-height: 1.4;"></p>
+    </div>
+    <div class="divider-cross"><span style="color: var(--gold);">✝</span></div>
+    <p class="fell" style="font-style: italic; color: var(--ink-light); font-size: 0.9rem; margin-top: 12px;">
+      «Хай Святий Спиридон буде вашим заступником»
+    </p>
+    <button onclick="closeSuccess()" class="cta-btn mt-4" style="font-size: 0.95rem; padding: 14px 24px;">Закрити</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     IMAGE LIGHTBOX
+═══════════════════════════════════════════ -->
+<div id="image-lightbox" onclick="closeLightbox()" style="display: none; position: fixed; z-index: 500; left: 0; top: 0; width: 100%; height: 100%; background: rgba(28, 16, 8, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s ease-out; cursor: zoom-out;">
+  <span style="position: absolute; top: 24px; right: 24px; color: #FAF7F0; font-size: 32px; font-weight: 300; cursor: pointer; user-select: none; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">&times;</span>
+  <img id="lightbox-img" style="max-width: 90%; max-height: 85%; margin: auto; display: block; border-radius: 16px; border: 2px solid var(--parchment-mid); box-shadow: 0 12px 40px rgba(0,0,0,0.6); transform: scale(0.92); transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);" src="" alt="Збільшене зображення" onclick="event.stopPropagation()">
+</div>
+
+<!-- ═══════════════════════════════════════════
+     LEGAL MODAL OVERLAY
+═══════════════════════════════════════════ -->
+<div id="legal-modal" class="fixed inset-0 z-[250] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300 ease-out" style="backdrop-filter: blur(8px); background-color: rgba(0, 0, 0, 0.5);">
+  <!-- Backdrop -->
+  <div class="absolute inset-0" onclick="closeLegalModal()"></div>
+  
+  <!-- Content box -->
+  <div class="relative w-full max-w-2xl bg-[#FAF7F0] border-2 border-[#C9A96E] rounded-2xl shadow-2xl p-6 md:p-8 transform scale-95 opacity-0 transition-all duration-300 ease-out max-h-[80vh] flex flex-col" id="legal-modal-box">
+    <!-- Close button (X) -->
+    <button onclick="closeLegalModal()" class="absolute top-4 right-4 text-[#1C1008] hover:text-[#6B1D2A] transition-colors duration-200 p-2 rounded-full hover:bg-stone-200/50 focus:outline-none" aria-label="Закрити">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    
+    <!-- Modal title -->
+    <div class="border-b border-[#EDE5D0] pb-4 mb-4 pr-8">
+      <h3 class="fell text-2xl font-bold italic text-[#6B1D2A] leading-tight" id="legal-modal-title"></h3>
+    </div>
+    
+    <!-- Modal body -->
+    <div class="overflow-y-auto pr-2 flex-1 text-[#3D2B18] text-sm md:text-base space-y-4 leading-relaxed scrollbar-thin" id="legal-modal-body">
+      <!-- Dynamic text injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+  // Force page to load from the top block (hero section) and ignore previous scroll positions
+  if (!window.location.hash) {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }
+
+  // ── State & Configuration ──
+  // Вставте сюди URL-адресу вашого веб-додатку Google Apps Script після налаштування за кроками в плануванні
+  const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxwon4InktEDw1g9Dsn41volo3l2ArF2NFqDseQS-ex3fj9uW7zNSSVUMgAXrZZDn4-1Q/exec"; 
+  const BACKEND_URL = "http://localhost:3000"; // Змініть на домен вашого бекенду при деплої (наприклад, https://api.grace-heritage.shop) 
+
+  let selectedColor = 'black';
+  let selectedColors = ['black'];
+  let selectedBundle = null;
+  let autoColorInterval = null;
+  let activeAutoColor = 'black';
+  let activeTileIndex = 0;
+
+  // ── Color data ──
+  const colorData = {
+    black: { label: 'Чорний' },
+    burgundy: { label: 'Бордовий' },
+    red: { label: 'Червоний' },
+    green: { label: 'Смарагдовий' },
+    blue: { label: 'Синій' }
+  };
+
+  const colorKeys = ['black', 'burgundy', 'red', 'green', 'blue'];
+
+  let activeSlideIndex = 0;
+
+  function selectStackColor(color) {
+    selectedColor = color;
+    activeAutoColor = color;
+    syncGalleryColor(color);
+  }
+  function selectTileColor(color, isManual = false) {
+    selectedColor = color;
+    activeAutoColor = color;
+    syncGalleryColor(color);
+  }
+  function renderCarousel(color) {
+    selectedColor = color;
+    activeAutoColor = color;
+    syncGalleryColor(color);
+  }
+  function startAutoCycle() {
+    if (autoColorInterval) return;
+    autoColorInterval = setInterval(() => {
+      activeSlideIndex = (activeSlideIndex + 1) % 10;
+      const targetThumb = document.querySelector(`.thumb-item[data-index="${activeSlideIndex}"]`);
+      if (targetThumb) {
+        selectGalleryItem(targetThumb, true);
+      }
+    }, 3500);
+  }
+  function stopAutoCycle() {
+    if (autoColorInterval) {
+      clearInterval(autoColorInterval);
+      autoColorInterval = null;
+    }
+  }
+
+  // ── Render Color Selectors Dynamically ──
+  function renderColorSelectors() {
+    const container = document.getElementById('color-selectors-container');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    // If no bundle selected, color picker is not needed/hidden
+    if (selectedBundle === null) {
+      container.style.display = 'none';
+      return;
+    }
+    
+    container.style.display = 'block';
+    
+    const count = selectedBundle;
+    
+    // Ensure selectedColors has appropriate length
+    while (selectedColors.length < count) {
+      selectedColors.push('black');
+    }
+    if (selectedColors.length > count) {
+      selectedColors = selectedColors.slice(0, count);
+    }
+    
+    for (let i = 0; i < count; i++) {
+      const wrap = document.createElement('div');
+      wrap.className = 'color-pill-wrap';
+      if (i > 0) wrap.style.marginTop = '16px';
+      
+      const label = document.createElement('p');
+      label.className = 'color-pill-label';
+      
+      const activeColorName = colorData[selectedColors[i]].label;
+      if (count === 1) {
+        label.innerHTML = `Виберіть колір оберега: <span style="color: var(--burgundy); font-weight: 800;">${activeColorName}</span>`;
+      } else {
+        label.innerHTML = `Виберіть колір ${i + 1}-го оберега: <span style="color: var(--burgundy); font-weight: 800;">${activeColorName}</span>`;
+      }
+      wrap.appendChild(label);
+      
+      const row = document.createElement('div');
+      row.className = 'color-pill-row';
+      
+      // Render buttons for each color in colorData
+      Object.keys(colorData).forEach(colorKey => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `color-pill color-pill-${colorKey} ${selectedColors[i] === colorKey ? 'active' : ''}`;
+        btn.onclick = () => selectColorForIndex(i, colorKey);
+        btn.textContent = colorData[colorKey].label;
+        row.appendChild(btn);
+      });
+      
+      wrap.appendChild(row);
+      container.appendChild(wrap);
+    }
+  }
+
+  function syncGalleryColor(color) {
+    const colorIndices = {
+      'black': 0,
+      'burgundy': 1,
+      'red': 2,
+      'blue': 3,
+      'green': 4
+    };
+    const idx = colorIndices[color];
+    if (idx !== undefined) {
+      const targetThumb = document.querySelector(`.thumb-item[data-index="${idx}"]`);
+      if (targetThumb) {
+        selectGalleryItem(targetThumb, false);
+      }
+    }
+  }
+
+  function selectColorForIndex(index, color) {
+    stopAutoCycle(); // stop auto cycling when user interacts
+    selectedColors[index] = color;
+    
+    // If it's the first bracelet, sync with gallery
+    if (index === 0) {
+      selectedColor = color;
+      syncGalleryColor(color);
+    }
+    
+    renderColorSelectors();
+    
+    if (window.dataLayer) {
+      window.dataLayer.push({ 
+        event: 'color_selected', 
+        color_index: index, 
+        color_variant: color,
+        all_colors: selectedColors.join(', ')
+      });
+    }
+  }
+
+  // ── Select bundle ──
+  function selectBundle(n) {
+    selectedBundle = n;
+    
+    // Toggle active selected classes on cards
+    document.querySelectorAll('.bundle-card').forEach((c, i) => {
+      c.classList.toggle('selected', (i + 1) === n);
+      c.classList.toggle('selected-bundle', (i + 1) === n);
+    });
+
+    // Render selectors based on new bundle size
+    renderColorSelectors();
+
+    // Update dynamic sub-headline in checkout form
+    const headline = document.getElementById('checkout-context-headline');
+    if (headline) {
+      if (n === 1) headline.textContent = 'Ви оформлюєте: Один оберіг — 890 ₴';
+      else if (n === 2) headline.textContent = 'Ви оформлюєте: Пара оберегів — 1690 ₴';
+      else if (n === 3) headline.textContent = 'Ви оформлюєте: Сімейний пакет (3 шт) — 2490 ₴';
+      else headline.textContent = 'Будь ласка, оберіть варіант оберегу вище';
+    }
+
+    // Automatically and smoothly scroll down to color selectors container
+    if (n >= 1 && n <= 3) {
+      const target = document.getElementById('color-selectors-container');
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 150);
+      }
+    }
+
+    // GTM push with deduplication event_id
+    if (window.dataLayer) {
+      window.dataLayer.push({ 
+        event: 'bundle_selected', 
+        event_id: 'bundle_selected_' + new Date().getTime() + '_' + Math.random().toString(36).substr(2, 9),
+        bundle_option: n 
+      });
+    }
+  }
+
+  // ── Scroll to order ──
+  function scrollToOrder(btnEl) {
+    document.getElementById('order').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    let buttonName = 'Замовити зараз';
+    let buttonLocation = 'body';
+    
+    if (btnEl) {
+      buttonName = btnEl.textContent.replace(/→/g, '').trim();
+      buttonLocation = btnEl.getAttribute('data-location') || 'body';
+    }
+
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'click_cta',
+        'event_id': 'click_cta_' + new Date().getTime() + '_' + Math.random().toString(36).substr(2, 9),
+        'button_name': buttonName,
+        'button_location': buttonLocation
+      });
+    }
+  }
+
+  // ── Form validation & submit ──
+  function submitOrder(e) {
+    e.preventDefault();
+
+    // Check if bundle is selected (UX Form Validation)
+    if (selectedBundle === null) {
+      const grid = document.getElementById('bundle-grid');
+      if (grid) {
+        grid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Visual cue: temporary high visibility outline
+        grid.style.transition = 'outline 0.3s ease';
+        grid.style.outline = '3px solid var(--burgundy)';
+        grid.style.outlineOffset = '6px';
+        grid.style.borderRadius = '16px';
+        setTimeout(() => {
+          grid.style.outline = 'none';
+        }, 1500);
+      }
+      return;
+    }
+
+    const name = document.getElementById('field-name').value.trim();
+    const phone = document.getElementById('field-phone').value.trim();
+    const shipping = document.getElementById('field-shipping').value.trim();
+    let valid = true;
+
+    document.getElementById('err-name').style.display = 'none';
+    document.getElementById('err-phone').style.display = 'none';
+    document.getElementById('err-shipping').style.display = 'none';
+
+    const nameParts = name.split(/\s+/).filter(part => part.length > 0);
+    if (name.length < 2 || nameParts.length < 2) {
+      const errName = document.getElementById('err-name');
+      if (nameParts.length === 1 && name.length >= 2) {
+        errName.textContent = "Будь ласка, введіть і прізвище, і ім'я (не менше 2-х слів)";
+      } else {
+        errName.textContent = "Будь ласка, введіть ваше прізвище та ім'я";
+      }
+      errName.style.display = 'block';
+      document.getElementById('field-name').focus();
+      valid = false;
+    }
+
+    const phoneClean = phone.replace(/\D/g, '');
+    if (phoneClean.length < 10) {
+      document.getElementById('err-phone').style.display = 'block';
+      if (valid) document.getElementById('field-phone').focus();
+      valid = false;
+    }
+
+    if (shipping.length < 5) {
+      document.getElementById('err-shipping').style.display = 'block';
+      if (valid) document.getElementById('field-shipping').focus();
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    // Calculate color labels & dynamic GA4 eCommerce parameters
+    const colorsText = selectedColors.map(c => colorData[c].label).join(' + ');
+
+    let itemPrice = 890;
+    let itemQty = 1;
+    let itemId = 'oberig_bundle_1';
+    let itemName = 'Один оберіг';
+
+    if (selectedBundle === 2) {
+      itemPrice = 1690;
+      itemQty = 2;
+      itemId = 'oberig_bundle_2';
+      itemName = 'Пара оберегів';
+    } else if (selectedBundle === 3) {
+      itemPrice = 2490;
+      itemQty = 3;
+      itemId = 'oberig_bundle_3';
+      itemName = 'Сімейний (3 шт)';
+    }
+
+    // ── GA4 begin_checkout dataLayer Push ──
+    const checkoutEventId = 'checkout_' + new Date().getTime() + '_' + Math.random().toString(36).substr(2, 9);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'begin_checkout',
+      'event_id': checkoutEventId,
+      'ecommerce': {
+        'currency': 'UAH',
+        'value': itemPrice, 
+        'items': [{
+          'item_name': itemName,
+          'item_id': itemId,
+          'price': itemPrice,
+          'item_variant': colorsText,
+          'quantity': itemQty
+        }]
+      }
+    });
+
+    // GTM legacy compatibility push
+    window.dataLayer.push({
+      event: 'order_submitted',
+      customer_name: name,
+      bundle_option: selectedBundle,
+      color_variant: colorsText
+    });
+
+    // Generate transaction ID early to sync GTM and Google Sheets
+    const trxId = 'TRX_' + new Date().getTime() + '_' + Math.random().toString(36).substr(2, 5);
+
+    // Disable submit button and show loading state for premium UX
+    const submitBtn = document.getElementById('submit-btn');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Завантаження платіжної сторінки...';
+
+    // Get bundle label
+    let bundleLabel = '';
+    if (selectedBundle === 1) bundleLabel = 'Один оберіг (1 шт) — 890 ₴';
+    else if (selectedBundle === 2) bundleLabel = 'Пара оберегів (2 шт) — 1 690 ₴';
+    else if (selectedBundle === 3) bundleLabel = 'Сімейний комплект (3 шт) — 2 490 ₴';
+
+    const orderPayload = {
+      name: name,
+      phone: phone,
+      shipping: shipping,
+      bundle: bundleLabel,
+      colors: selectedColors.map(c => colorData[c].label),
+      amount: itemPrice,
+      qty: itemQty
+    };
+
+    const endpointUrl = (typeof BACKEND_URL !== 'undefined' ? BACKEND_URL : '') + '/api/create-payment';
+
+    fetch(endpointUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(orderPayload)
+    })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(errData => {
+          throw new Error(errData.error || 'Помилка сервера при створенні рахунку');
+        });
+      }
+      return response.json();
+    })
+    .then(result => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+
+      if (result.success && result.pageUrl) {
+        // ── GA4 purchase dataLayer Push (CAPI Deduplication & GA4 E-commerce Standard) ──
+        const purchaseEventId = 'purchase_' + new Date().getTime() + '_' + Math.random().toString(36).substr(2, 9);
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'purchase',
+          'event_id': purchaseEventId,
+          'ecommerce': {
+            'transaction_id': result.orderId || ('TRX_' + Date.now()),
+            'currency': 'UAH',
+            'value': itemPrice, 
+            'items': [{
+              'item_name': itemName,
+              'item_id': itemId,
+              'price': itemPrice,
+              'item_variant': colorsText,
+              'quantity': itemQty
+            }]
+          }
+        });
+
+        // Store details in localStorage to display on success redirect
+        localStorage.setItem('lastOrderBundle', selectedBundle);
+        localStorage.setItem('lastOrderColors', colorsText);
+
+        // Reset form
+        document.getElementById('field-name').value = '';
+        document.getElementById('field-phone').value = '';
+        document.getElementById('field-shipping').value = '';
+
+        // Redirect to Monobank checkout page
+        window.location.href = result.pageUrl;
+      } else {
+        alert('Сталася помилка при створенні оплати. Будь ласка, спробуйте ще раз.');
+      }
+    })
+    .catch(error => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+      console.error('Payment creation error:', error);
+      alert('Сталася помилка зв\'язку з платіжним сервером: ' + error.message);
+    });
+  }
+
+  function closeSuccess() {
+    document.getElementById('success-overlay').classList.remove('show');
+    document.body.style.overflow = '';
+
+    // Pause the success wear video
+    const successVideo = document.getElementById('success-wear-video');
+    if (successVideo) {
+      successVideo.pause();
+    }
+  }
+
+  function openLightbox(src) {
+    const lightbox = document.getElementById('image-lightbox');
+    const img = document.getElementById('lightbox-img');
+    if (!lightbox || !img) return;
+    img.src = src;
+    lightbox.style.display = 'flex';
+    // Trigger reflow
+    lightbox.offsetHeight;
+    lightbox.style.opacity = '1';
+    img.style.transform = 'scale(1)';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    const img = document.getElementById('lightbox-img');
+    if (!lightbox || !img) return;
+    lightbox.style.opacity = '0';
+    img.style.transform = 'scale(0.92)';
+    setTimeout(() => {
+      lightbox.style.display = 'none';
+      img.src = '';
+      if (!document.getElementById('success-overlay').classList.contains('show')) {
+        document.body.style.overflow = '';
+      }
+    }, 250);
+  }
+
+  function selectGalleryItem(element, syncForm = true) {
+    if (syncForm) {
+      stopAutoCycle();
+    }
+
+    document.querySelectorAll('.thumb-item').forEach(thumb => {
+      thumb.style.borderColor = 'transparent';
+      thumb.classList.remove('active');
+    });
+    
+    element.style.borderColor = 'var(--gold)';
+    element.classList.add('active');
+    
+    const mainImg = document.getElementById('gallery-main-img');
+    const colorLabel = document.getElementById('gallery-color-label');
+    
+    if (mainImg) {
+      mainImg.style.opacity = '0.4';
+      setTimeout(() => {
+        mainImg.src = element.getAttribute('data-src');
+        mainImg.style.opacity = '1';
+      }, 100);
+    }
+    
+    if (colorLabel) {
+      colorLabel.textContent = element.getAttribute('data-color');
+    }
+
+    const thumbIndex = parseInt(element.getAttribute('data-index'), 10);
+    activeSlideIndex = thumbIndex;
+
+    if (syncForm) {
+      const thumbColors = {
+        0: 'black',
+        1: 'burgundy',
+        2: 'red',
+        3: 'blue',
+        4: 'green',
+        5: 'black',
+        6: 'burgundy',
+        7: 'red',
+        8: 'blue',
+        9: 'green'
+      };
+      const mappedColor = thumbColors[thumbIndex];
+      if (mappedColor && selectedColors.length > 0) {
+        selectedColors[0] = mappedColor;
+        selectedColor = mappedColor;
+        renderColorSelectors();
+      }
+    }
+  }
+
+  function openMainImageLightbox() {
+    const mainImg = document.getElementById('gallery-main-img');
+    if (mainImg && typeof openLightbox === 'function') {
+      openLightbox(mainImg.src);
+    }
+  }
+
+  // ── Scarcity bar animation ──
+  function animateScarcityBar() {
+    const bar = document.getElementById('scarcity-bar');
+    const leftText = document.getElementById('scarcity-left');
+    const leftFinalText = document.getElementById('scarcity-left-final');
+    const orderedText = document.getElementById('scarcity-ordered');
+    
+    let currentLeft = 14;
+    let currentOrdered = 78;
+    const total = 92;
+
+    // Set initial width
+    setTimeout(() => {
+      if (bar) bar.style.width = ((currentOrdered / total) * 100) + '%';
+    }, 600);
+
+    // Periodic dynamic update function
+    function updateScarcity() {
+      if (currentLeft <= 3) return; // Don't decrease past 3 to keep it believable
+
+      // 65% chance of decreasing the inventory remaining
+      if (Math.random() < 0.65) {
+        currentLeft--;
+        currentOrdered++;
+
+        // Helper function to animate number pulse
+        function pulseElement(el, newValue) {
+          if (!el) return;
+          el.classList.remove('pulse-number');
+          void el.offsetWidth; // Trigger reflow to restart animation
+          el.textContent = newValue;
+          el.classList.add('pulse-number');
+        }
+
+        pulseElement(leftText, currentLeft);
+        pulseElement(leftFinalText, currentLeft);
+        pulseElement(orderedText, currentOrdered);
+
+        // Update bar width
+        if (bar) {
+          bar.style.width = ((currentOrdered / total) * 100) + '%';
+        }
+      }
+
+      // Schedule next check dynamically between 14 and 28 seconds
+      const nextInterval = 14000 + Math.random() * 14000;
+      setTimeout(updateScarcity, nextInterval);
+    }
+
+    // Schedule first update
+    const initialDelay = 12000 + Math.random() * 8000;
+    setTimeout(updateScarcity, initialDelay);
+  }
+
+  // ── Sticky bar ──
+  const orderSection = document.getElementById('order');
+  const stickyBar = document.getElementById('sticky-bar');
+
+  function onScroll() {
+    if (!orderSection) return;
+    const rectOrder = orderSection.getBoundingClientRect();
+    
+    const scrolledFromTop = window.scrollY > 20;
+    const orderEntered = rectOrder.top < window.innerHeight;
+    
+    stickyBar.classList.toggle('visible', scrolledFromTop && !orderEntered);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ── Intersection Observer for fade-in ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+  // ── Phone formatting with fixed +380 prefix ──
+  const phoneInput = document.getElementById('field-phone');
+  
+  phoneInput.addEventListener('focus', function() {
+    if (phoneInput.value.trim() === '') {
+      phoneInput.value = '+380';
+    }
+  });
+
+  phoneInput.addEventListener('input', function(e) {
+    let val = e.target.value.replace(/\D/g, '');
+    
+    // Automatically convert typed input formats to 380XXXXXXXXX
+    if (val.startsWith('380')) {
+      // Format is correct
+    } else if (val.startsWith('0')) {
+      val = '38' + val; // e.g. 096 -> 38096
+    } else if (val.startsWith('80')) {
+      val = '3' + val; // e.g. 8096 -> 38096
+    } else if (val.length > 0) {
+      val = '380' + val; // e.g. 96 -> 38096
+    }
+    
+    if (val.length > 12) val = val.slice(0, 12);
+    
+    let formatted = '';
+    if (val.length > 0) {
+      formatted = '+380';
+      if (val.length > 3) {
+        formatted += ' (' + val.slice(3, 5);
+      }
+      if (val.length > 5) {
+        formatted += ') ' + val.slice(5, 8);
+      }
+      if (val.length > 8) {
+        formatted += '-' + val.slice(8, 10);
+      }
+      if (val.length > 10) {
+        formatted += '-' + val.slice(10, 12);
+      }
+    }
+    
+    e.target.value = formatted;
+  });
+
+  phoneInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Backspace' || e.key === 'Delete') {
+      // Prevent deleting the '+380' prefix if selection is at the start
+      if (phoneInput.selectionStart <= 4 && phoneInput.selectionEnd <= 4) {
+        e.preventDefault();
+      }
+    }
+  });
+
+  // ── Legal Modals ──
+  function openLegalModal(type) {
+    const modal = document.getElementById('legal-modal');
+    const box = document.getElementById('legal-modal-box');
+    const title = document.getElementById('legal-modal-title');
+    const body = document.getElementById('legal-modal-body');
+    
+    let contentTitle = '';
+    let contentBody = '';
+    
+    if (type === 'about') {
+      contentTitle = 'Про нас';
+      contentBody = `
+        <div style="font-family: 'Nunito', sans-serif;">
+          <div style="display: flex; flex-direction: column; gap: 16px; line-height: 1.6; color: var(--ink-muted);">
+            <div style="text-align: center; margin-bottom: 8px;">
+              <h2 style="font-family: 'Lora', Georgia, serif; font-size: 1.3rem; font-weight: 700; color: var(--burgundy); margin-bottom: 6px; line-height: 1.3;">
+                Grace Heritage: Зберігаючи духовні традиції острова Корфу та Афону
+              </h2>
+              <p style="font-size: 0.9rem; font-style: italic; color: var(--gold); font-weight: 600; margin: 0;">
+                Справжня історія та автентичність у кожному вузлику
+              </p>
+            </div>
+            
+            <p>
+              Бренд <strong>Grace Heritage</strong> народився з глибокої поваги до духовних традицій та багатовікової спадщини Греції. Наша місія — відкрити для українців справжні, автентичні комбоскіні, які несуть у собі душевний спокій, захист та благословення.
+            </p>
+            
+            <p>
+              Ми не займаємося мас-маркетом і копіями. Кожен виріб «Grace Heritage» створюється вручну на благословенному острові Корфу за старовинними монастирськими канонами. Кожен вузлик плететься з молитвою та особливим душевним трепетом, перетворюючи браслет на справжній особистий оберіг.
+            </p>
+            
+            <div style="margin-top: 8px; border-top: 1px solid var(--parchment-mid); padding-top: 12px;">
+              <p style="font-weight: 700; color: var(--burgundy); margin-bottom: 12px; font-size: 0.95rem;">Чому нам довіряють:</p>
+              <ul style="display: flex; flex-direction: column; gap: 10px; list-style-type: none; padding: 0; margin: 0;">
+                <li style="padding-left: 16px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--gold);">•</span>
+                  <strong>100% Автентичність:</strong> Ми особисто імпортуємо вироби безпосередньо з острова Корфу.
+                </li>
+                <li style="padding-left: 16px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--gold);">•</span>
+                  <strong>Ручна робота:</strong> Тільки традиційне вузликове плетіння, яке зберігає тепло рук майстра.
+                </li>
+                <li style="padding-left: 16px; position: relative;">
+                  <span style="position: absolute; left: 0; color: var(--gold);">•</span>
+                  <strong>Естетика та якість:</strong> Ми поєднали глибокий духовний зміст із преміальними матеріалами, щоб ваш оберіг виглядав естетично та служив роками.
+                </li>
+              </ul>
+            </div>
+            
+            <p style="font-style: italic; text-align: center; margin-top: 12px; color: var(--ink-light); font-size: 0.95rem; font-weight: 600;">
+              Grace Heritage — це ваш особистий зв'язок із благословенною землею Корфу, який завжди поруч із вами.
+            </p>
+          </div>
+        </div>
+      `;
+    } else if (type === 'privacy') {
+      contentTitle = 'Політика конфіденційності';
+      contentBody = `
+        <div style="font-family: 'Nunito', sans-serif;">
+          <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--burgundy); margin-bottom: 16px; border-bottom: 1px solid var(--parchment-mid); padding-bottom: 8px;">
+            ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ ТА ЗАХИСТУ ПЕРСОНАЛЬНИХ ДАНИХ
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 16px; line-height: 1.6; color: var(--ink-muted);">
+            <p>
+              Ця Політика конфіденційності регламентує порядок збору, обробки та використання персональних даних користувачів сайту <a href="https://grace-heritage.shop/" target="_blank" style="color: var(--burgundy); text-decoration: underline;">https://grace-heritage.shop/</a> (надалі — Сайт), що належить ФОП Петренко Наталія Вікторівна (надалі — Продавець).
+            </p>
+            <p>
+              <strong>1. ЗБІР ТА ВИКОРИСТАННЯ ДАНИХ</strong><br/>
+              <strong>1.1.</strong> Під час оформлення замовлення на Сайті Користувач надає такі дані: ім'я, номер телефону, адреса доставки (відділення або поштомат ТОВ «Нова Пошта»).<br/>
+              <strong>1.2.</strong> Продавець використовує ці дані виключно для обробки замовлення, доставки товару, зв'язку з Клієнтом, а також для оптимізації рекламних кампаній за допомогою маркетингових інструментів (зокрема, Meta Pixel).<br/>
+              <strong>1.3.</strong> Сайт використовує файли cookie (куки) для аналізу загального трафіку та покращення зручності користування інтерфейсом.
+            </p>
+            <p>
+              <strong>2. ЗАХИСТ ТА ПЕРЕДАЧА ДАНИХ ТРЕТІЙ СТОРОНІ</strong><br/>
+              <strong>2.1.</strong> Продавець вживає всіх необхідних технічних та організаційних заходів для захисту даних користувачів відповідно до Закону України «Про захист персональних даних».<br/>
+              <strong>2.2.</strong> Персональні дані Клієнта передаються третім особам (наприклад, службі доставки «Нова Пошта») виключно з метою виконання поточного замовлення Клієнта.
+            </p>
+            <p>
+              <strong>3. ПРАВА КОРИСТУВАЧА</strong><br/>
+              <strong>3.1.</strong> Користувач має право в будь-який момент відкликати свою згоду на обробку даних, звернувшись до адміністрації сайту за контактами, вказаними у футері сайту.
+            </p>
+          </div>
+        </div>
+      `;
+    } else if (type === 'terms') {
+      contentTitle = 'Договір публічної оферти';
+      contentBody = `
+        <div style="font-family: 'Nunito', sans-serif;">
+          <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--burgundy); margin-bottom: 16px; border-bottom: 1px solid var(--parchment-mid); padding-bottom: 8px;">
+            ПУБЛІЧНА ОФЕРТА (ДОГОВІР КУПІВЛІ-ПРОДАЖУ ТОВАРУ)
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 16px; line-height: 1.6; color: var(--ink-muted);">
+            <p>
+              Цей Договір є офіційною та публічною пропозицією ФОП Петренко Наталія Вікторівна (надалі — Продавець) для будь-якої фізичної особи (надалі — Покупець) укласти договір купівлі-продажу товарів дистанційним способом через сайт <a href="https://grace-heritage.shop/" target="_blank" style="color: var(--burgundy); text-decoration: underline;">https://grace-heritage.shop/</a>.
+            </p>
+            <p>
+              <strong>1. ЗАГАЛЬНІ ПОЛОЖЕННЯ ТА АКЦЕПТ</strong><br/>
+              <strong>1.1.</strong> Моментом укладення цього Договору (акцептом оферти) вважається натискання Покупцем кнопки оформлення замовлення на Сайті або факт здійснення оплати товару.
+            </p>
+            <p>
+              <strong>2. ПРЕДМЕТ ДОГОВОРУ</strong><br/>
+              <strong>2.1.</strong> Продавець зобов’язується передати у власність Покупця духовні вироби ручної роботи з острова Корфу (надалі — Товар), а Покупець зобов’язується оплатити та прийняти Товар на умовах цього Договору.
+            </p>
+            <p>
+              <strong>3. ЦІНА ТА ПОРЯДОК РОЗРАХУНКІВ</strong><br/>
+              <strong>3.1.</strong> Ціни на Товар вказані на Сайті в національній валюті України — гривні.<br/>
+              <strong>3.2.</strong> Покупець може оплатити замовлення онлайн на Сайті за допомогою інтегрованих платіжних систем (еквайрингу) або при отриманні у відділенні Нової Пошти (післяплата).
+            </p>
+            <p>
+              <strong>4. ВІДПОВІДАЛЬНІСТЬ СТОРІН</strong><br/>
+              <strong>4.1.</strong> Сторони несуть відповідальність за невиконання умов договору відповідно до чинного законодавства України.<br/>
+              <strong>4.2.</strong> Продавець не несе відповідальності за затримки в доставці, що виникли з вини логістичної компанії (ТОВ «Нова Пошта»).
+            </p>
+          </div>
+        </div>
+      `;
+    } else if (type === 'delivery') {
+      contentTitle = 'Доставка, оплата та повернення';
+      contentBody = `
+        <div style="font-family: 'Nunito', sans-serif;">
+          <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--burgundy); margin-bottom: 16px; border-bottom: 1px solid var(--parchment-mid); padding-bottom: 8px;">
+            ДОСТАВКА, ОПЛАТА ТА УМОВИ ПОВЕРНЕННЯ ТОВАРУ
+          </h2>
+          <div style="display: flex; flex-direction: column; gap: 16px; line-height: 1.6; color: var(--ink-muted);">
+            <p>
+              <strong>1. СПОСОБИ ОПЛАТИ</strong><br/>
+              • <strong>Онлайн-оплата карткою (Visa/Mastercard)</strong> безпосередньо на сайті через захищений платіжний шлюз.<br/>
+              • <strong>Оплата при отриманні (Післяплата)</strong> у відділенні «Нова Пошта» після огляду та перевірки товару.
+            </p>
+            <p>
+              <strong>2. УМОВИ ДОСТАВКИ</strong><br/>
+              • Доставка здійснюється по всій Україні службою «Нова Пошта» (у відділення, поштомат або кур'єром).<br/>
+              • Термін доставки складає 1–3 робочих дні з моменту підтвердження замовлення. Вартість доставки сплачується Покупцем за тарифами перевізника.
+            </p>
+            <p>
+              <strong>3. УМОВИ ОБМІНУ ТА ПОВЕРНЕННЯ (СТРАТЕГІЯ ЗАХИСТУ ТОВАРНОГО ВИГЛЯДУ)</strong><br/>
+              • Відповідно до Статті 9 Закону України «Про захист прав споживачів», Покупець має право повернути або обміняти товар належної якості протягом 14 днів з моменту покупки, <strong>ТІЛЬКИ якщо товар НЕ використовувався і якщо збережено його ТОВАРНИЙ ВИГЛЯД</strong>, споживчі властивості, пломби та ярлики.<br/>
+              • <strong>ВАЖЛИВО:</strong> Оскільки духовні вироби (комбоскіні) «Grace Heritage» є виробами ручної роботи з текстильних/вовняних ниток, вони мають властивість деформуватися, розтягуватися та вбирати сторонні запахи (парфуми, косметику) при першій же примірці.<br/>
+              • З метою дотримання духовних, етичних та гігієнічних стандартів, кожен виріб постачається у спеціальній індивідуальній захисній упаковці із фірмовою наклейкою-пломбою.<br/>
+              • <strong>У разі розкриття захисної упаковки, пошкодження чи зірвання наклейки-пломби, виріб вважається таким, що втратив свій ТОВАРНИЙ ВИГЛЯД</strong> та первинні споживчі властивості. На підставі Ст. 9 ЗУ «Про захист прав споживачів» Продавець залишає за собою право відмовити у поверненні або обміні такого товару.<br/>
+              • Для оформлення повернення товару у невикористаному вигляді та із цілою пломбою, зв'яжіться з нами за контактами, вказаними на сайті. Повернення коштів здійснюється на картку Покупця протягом 7 робочих днів після отримання та експертизи виробу Продавцем.
+            </p>
+          </div>
+        </div>
+      `;
+    }
+    
+    title.innerHTML = contentTitle;
+    body.innerHTML = contentBody;
+    
+    // Disable body scroll
+    document.body.style.overflow = 'hidden';
+    
+    // Animate Modal Open
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    modal.classList.add('opacity-100', 'pointer-events-auto');
+    
+    setTimeout(() => {
+      box.classList.remove('scale-95', 'opacity-0');
+      box.classList.add('scale-100', 'opacity-100');
+    }, 10);
+  }
+
+  function closeLegalModal() {
+    const modal = document.getElementById('legal-modal');
+    const box = document.getElementById('legal-modal-box');
+    
+    // Animate Modal Close
+    box.classList.remove('scale-100', 'opacity-100');
+    box.classList.add('scale-95', 'opacity-0');
+    
+    setTimeout(() => {
+      modal.classList.remove('opacity-100', 'pointer-events-auto');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      
+      // Restore scroll if success overlay isn't active
+      if (!document.getElementById('success-overlay').classList.contains('show')) {
+        document.body.style.overflow = '';
+      }
+    }, 200);
+  }
+
+  // ── Init ──
+  window.addEventListener('DOMContentLoaded', () => {
+    // Check if redirecting back from a successful Monobank payment
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('status') === 'success') {
+      const successOverlay = document.getElementById('success-overlay');
+      if (successOverlay) {
+        // Read stored details from localStorage to populate thank you modal
+        const lastOrderBundle = localStorage.getItem('lastOrderBundle');
+        const lastOrderColors = localStorage.getItem('lastOrderColors');
+        
+        const summaryBox = document.getElementById('order-summary-box');
+        const summaryBundle = document.getElementById('summary-bundle');
+        const summaryColors = document.getElementById('summary-colors');
+        
+        if (summaryBox && summaryBundle && summaryColors && lastOrderBundle && lastOrderColors) {
+          const bundleNames = {
+            1: 'Один оберіг (1 шт)',
+            2: 'Пара оберегів (2 шт)',
+            3: 'Сімейний комплект (3 шт)'
+          };
+          summaryBundle.textContent = bundleNames[lastOrderBundle] || '';
+          summaryColors.textContent = 'Обрані кольори: ' + lastOrderColors;
+          summaryBox.style.display = 'block';
+        }
+
+        successOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+
+        // Auto-play the success wear video
+        const successVideo = document.getElementById('success-wear-video');
+        if (successVideo) {
+          successVideo.currentTime = 0;
+          successVideo.play().catch(err => console.log('Success video auto-play failed/interrupted:', err));
+        }
+        
+        // Clear stored order details
+        localStorage.removeItem('lastOrderBundle');
+        localStorage.removeItem('lastOrderColors');
+      }
+
+      // Clean up URL query parameters for clean address bar
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    animateScarcityBar();
+    renderCarousel('black'); // init gallery
+    startAutoCycle(); // start automatic color cycling
+    
+    // Reset and play wear video when it enters view, pause when it leaves view
+    const wearVideo = document.querySelector('#how-to-wear-section video');
+    if (wearVideo) {
+      let wasOutOfView = false;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (wasOutOfView) {
+              wearVideo.currentTime = 0;
+              wearVideo.play().catch(err => console.log('Video play interrupted:', err));
+            }
+            wasOutOfView = false;
+          } else {
+            wearVideo.pause();
+            wasOutOfView = true;
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(wearVideo);
+    }
+
+    // GA4 view_item event load (CAPI Deduplication & GA4 E-commerce Standard)
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'view_item',
+        'event_id': 'view_item_' + new Date().getTime() + '_' + Math.random().toString(36).substr(2, 9),
+        'ecommerce': {
+          'currency': 'UAH',
+          'value': 890, 
+          'items': [{
+            'item_name': 'Святиня з Корфу (Оберіг)',
+            'item_id': 'oberig_korfu',
+            'price': 890,
+            'item_brand': 'Святиня з Корфу',
+            'quantity': 1
+          }]
+        }
+      });
+    }
+
+    // Init selectors (renders hidden since selectedBundle is null)
+    renderColorSelectors();
+  });
+</script>
+</body>
+</html>
