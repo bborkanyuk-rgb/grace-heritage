@@ -1363,8 +1363,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // ── State & Configuration ──
   // Вставте сюди URL-адресу вашого веб-додатку Google Apps Script після налаштування за кроками в плануванні
-  const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxwon4InktEDw1g9Dsn41volo3l2ArF2NFqDseQS-ex3fj9uW7zNSSVUMgAXrZZDn4-1Q/exec"; 
-  const BACKEND_URL = "https://grace-heritage.onrender.com";
+  const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbxwon4InktEDw1g9Dsn41volo3l2ArF2NFqDseQS-ex3fj9uW7zNSSVUMgAXrZZDn4-1Q/exec";
 
   let selectedColor = 'black';
   let selectedColors = ['black'];
@@ -1692,46 +1691,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const submitBtn = document.getElementById('submit-btn');
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Завантаження платіжної сторінки...';
+    submitBtn.innerHTML = 'Надсилання...';
 
-    // Get bundle label
+    // Get bundle label for Telegram
     let bundleLabel = '';
     if (selectedBundle === 1) bundleLabel = 'Один оберіг (1 шт) — 890 ₴';
     else if (selectedBundle === 2) bundleLabel = 'Пара оберегів (2 шт) — 1 690 ₴';
     else if (selectedBundle === 3) bundleLabel = 'Сімейний комплект (3 шт) — 2 490 ₴';
 
-    const orderPayload = {
-      name: name,
-      phone: phone,
-      shipping: shipping,
-      bundle: bundleLabel,
-      colors: selectedColors.map(c => colorData[c].label),
-      amount: itemPrice,
-      qty: itemQty
-    };
+    // Format text for Telegram
+    const telegramMessage = `<b>🔔 Нове замовлення!</b>\n\n` +
+      `<b>🆔 ID:</b> ${trxId}\n` +
+      `<b>👤 Ім'я:</b> ${name}\n` +
+      `<b>📞 Телефон:</b> ${phone}\n` +
+      `<b>📍 Доставка:</b> ${shipping}\n` +
+      `<b>📦 Комплект:</b> ${bundleLabel}\n` +
+      `<b>🎨 Колір:</b> ${colorsText}`;
 
-    const endpointUrl = (typeof BACKEND_URL !== 'undefined' ? BACKEND_URL : '') + '/api/create-payment';
+    // Send to Google Sheets (Parallel Execution with safe URL check)
+    if (GOOGLE_SHEETS_URL && GOOGLE_SHEETS_URL.trim() !== "") {
+      try {
+        fetch(GOOGLE_SHEETS_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain'
+          },
+          body: JSON.stringify({
+            trxId: trxId,
+            name: name,
+            phone: phone,
+            shipping: shipping,
+            bundle: bundleLabel,
+            colors: colorsText,
+            value: itemPrice,
+            qty: itemQty
+          })
+        })
+        .catch(err => console.error('Error sending data to Google Sheets:', err));
+      } catch (sheetsError) {
+        console.error('Exception during Google Sheets submission:', sheetsError);
+      }
+    }
 
-    fetch(endpointUrl, {
+    // Send to Telegram (via Fetch API POST)
+    fetch('https://api.telegram.org/bot8551709614:AAG0cPhDj0MasK0EJjfOc1Vb7NOi_5cVIcc/sendMessage', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(orderPayload)
+      body: JSON.stringify({
+        chat_id: '-1003941811035',
+        text: telegramMessage,
+        parse_mode: 'HTML'
+      })
     })
     .then(response => {
-      if (!response.ok) {
-        return response.json().then(errData => {
-          throw new Error(errData.error || 'Помилка сервера при створенні рахунку');
-        });
-      }
-      return response.json();
-    })
-    .then(result => {
+      // Re-enable submit button and restore text
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
 
-      if (result.success && result.pageUrl) {
+      if (response.ok) {
         // ── GA4 purchase dataLayer Push (CAPI Deduplication & GA4 E-commerce Standard) ──
         const purchaseEventId = 'purchase_' + new Date().getTime() + '_' + Math.random().toString(36).substr(2, 9);
         window.dataLayer = window.dataLayer || [];
@@ -1739,7 +1758,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           'event': 'purchase',
           'event_id': purchaseEventId,
           'ecommerce': {
-            'transaction_id': result.orderId || ('TRX_' + Date.now()),
+            'transaction_id': trxId,
             'currency': 'UAH',
             'value': itemPrice, 
             'items': [{
@@ -1752,26 +1771,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         });
 
-        // Store details in localStorage to display on success redirect
-        localStorage.setItem('lastOrderBundle', selectedBundle);
-        localStorage.setItem('lastOrderColors', colorsText);
+        // Update summary in success overlay
+        const summaryBox = document.getElementById('order-summary-box');
+        const summaryBundle = document.getElementById('summary-bundle');
+        const summaryColors = document.getElementById('summary-colors');
+        
+        if (summaryBox && summaryBundle && summaryColors) {
+          const bundleNames = {
+            1: 'Один оберіг (1 шт)',
+            2: 'Пара оберегів (2 шт)',
+            3: 'Сімейний комплект (3 шт)'
+          };
+          summaryBundle.textContent = bundleNames[selectedBundle] || '';
+          summaryColors.textContent = 'Обрані кольори: ' + colorsText;
+          summaryBox.style.display = 'block';
+        }
+
+        // Show success
+        document.getElementById('success-overlay').classList.add('show');
+        document.body.style.overflow = 'hidden';
+
+        // Auto-play the success wear video
+        const successVideo = document.getElementById('success-wear-video');
+        if (successVideo) {
+          successVideo.currentTime = 0;
+          successVideo.play().catch(err => console.log('Success video auto-play failed/interrupted:', err));
+        }
 
         // Reset form
         document.getElementById('field-name').value = '';
         document.getElementById('field-phone').value = '';
         document.getElementById('field-shipping').value = '';
-
-        // Redirect to Monobank checkout page
-        window.location.href = result.pageUrl;
       } else {
-        alert('Сталася помилка при створенні оплати. Будь ласка, спробуйте ще раз.');
+        console.error('Telegram API response error:', response.statusText);
+        alert('Сталася помилка при відправці замовлення. Будь ласка, спробуйте ще раз або зв\'яжіться з нами.');
       }
     })
     .catch(error => {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
-      console.error('Payment creation error:', error);
-      alert('Сталася помилка зв\'язку з платіжним сервером: ' + error.message);
+      console.error('Fetch error sending to Telegram:', error);
+      alert('Сталася помилка зв\'язку з сервером. Перевірте підключення до інтернету та спробуйте ще раз.');
     });
   }
 
@@ -2194,49 +2234,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // ── Init ──
   window.addEventListener('DOMContentLoaded', () => {
-    // Check if redirecting back from a successful Monobank payment
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('status') === 'success') {
-      const successOverlay = document.getElementById('success-overlay');
-      if (successOverlay) {
-        // Read stored details from localStorage to populate thank you modal
-        const lastOrderBundle = localStorage.getItem('lastOrderBundle');
-        const lastOrderColors = localStorage.getItem('lastOrderColors');
-        
-        const summaryBox = document.getElementById('order-summary-box');
-        const summaryBundle = document.getElementById('summary-bundle');
-        const summaryColors = document.getElementById('summary-colors');
-        
-        if (summaryBox && summaryBundle && summaryColors && lastOrderBundle && lastOrderColors) {
-          const bundleNames = {
-            1: 'Один оберіг (1 шт)',
-            2: 'Пара оберегів (2 шт)',
-            3: 'Сімейний комплект (3 шт)'
-          };
-          summaryBundle.textContent = bundleNames[lastOrderBundle] || '';
-          summaryColors.textContent = 'Обрані кольори: ' + lastOrderColors;
-          summaryBox.style.display = 'block';
-        }
-
-        successOverlay.classList.add('show');
-        document.body.style.overflow = 'hidden';
-
-        // Auto-play the success wear video
-        const successVideo = document.getElementById('success-wear-video');
-        if (successVideo) {
-          successVideo.currentTime = 0;
-          successVideo.play().catch(err => console.log('Success video auto-play failed/interrupted:', err));
-        }
-        
-        // Clear stored order details
-        localStorage.removeItem('lastOrderBundle');
-        localStorage.removeItem('lastOrderColors');
-      }
-
-      // Clean up URL query parameters for clean address bar
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-
     animateScarcityBar();
     renderCarousel('black'); // init gallery
     startAutoCycle(); // start automatic color cycling
