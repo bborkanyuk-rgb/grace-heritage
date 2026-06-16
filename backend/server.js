@@ -53,7 +53,7 @@ async function sendToGoogleSheets(payload) {
 // 1. Endpoint: Create Payment Invoice
 app.post('/api/create-payment', async (req, res) => {
   try {
-    const { name, phone, shipping, bundle, colors, amount, qty } = req.body;
+    const { name, phone, shipping, bundle, colors, amount, qty, paymentMethod } = req.body;
 
     if (!name || !phone || !amount) {
       return res.status(400).json({ success: false, error: 'Необхідні поля відсутні' });
@@ -62,19 +62,25 @@ app.post('/api/create-payment', async (req, res) => {
     const orderId = `GH-${Date.now()}`;
     const colorsText = Array.isArray(colors) ? colors.join(', ') : (colors || '');
 
-    console.log(`[PAYMENT] Creating invoice for Order: ${orderId}, Amount: ${amount} UAH`);
+    const isPrepayment = paymentMethod === 'prepayment';
+    const invoiceAmount = isPrepayment ? 190 : amount;
+    const initialStatus = isPrepayment ? 'Очікує передплати (190 ₴)' : 'Очікує повної оплати';
+
+    console.log(`[PAYMENT] Creating invoice for Order: ${orderId}, Amount: ${invoiceAmount} UAH (Method: ${paymentMethod})`);
 
     // Call Monobank API to create invoice
     const monoResponse = await axios.post(
       'https://api.monobank.ua/api/merchant/invoice/create',
       {
-        amount: Math.round(amount * 100), // convert to kopecks
+        amount: Math.round(invoiceAmount * 100), // convert to kopecks
         ccy: 980, // UAH
         merchantInvoiceId: orderId,
         redirectUrl: SUCCESS_REDIRECT_URL,
         // The webhook URL should point back to this server's public endpoint
         webHookUrl: process.env.WEBHOOK_URL ? `${process.env.WEBHOOK_URL}/api/webhook/monobank` : undefined,
-        destination: `Оплата замовлення ${orderId} (Grace Heritage)`
+        destination: isPrepayment 
+          ? `Передплата замовлення ${orderId} (Grace Heritage)` 
+          : `Оплата замовлення ${orderId} (Grace Heritage)`
       },
       {
         headers: {
@@ -94,21 +100,27 @@ app.post('/api/create-payment', async (req, res) => {
       shipping,
       bundle,
       colors: colorsText,
-      value: amount,
+      value: amount, // Keep full package value in Sheets for bookkeeping
       qty: qty || 1,
-      status: 'Очікує оплати'
+      status: initialStatus
     };
     await sendToGoogleSheets(sheetPayload);
 
     // Send Telegram Notification
-    const tgMessage = `<b>🔔 Нове замовлення (Очікує оплати)</b>\n\n` +
+    const paymentMethodLabel = isPrepayment 
+      ? `Часткова передплата 190 ₴ (залишок при отриманні: ${amount - 190} ₴)` 
+      : 'Повна оплата онлайн';
+
+    const tgMessage = `<b>🔔 Нове замовлення (${initialStatus})</b>\n\n` +
       `<b>🆔 ID:</b> ${orderId}\n` +
       `<b>👤 Ім'я:</b> ${name}\n` +
       `<b>📞 Телефон:</b> ${phone}\n` +
       `<b>📍 Доставка:</b> ${shipping}\n` +
       `<b>📦 Комплект:</b> ${bundle}\n` +
       `<b>🎨 Колір:</b> ${colorsText}\n` +
-      `<b>💵 Сума:</b> ${amount} ₴`;
+      `<b>💳 Спосіб оплат:</b> ${paymentMethodLabel}\n` +
+      `<b>💵 Загальна сума:</b> ${amount} ₴\n` +
+      `<b>💰 Сплачується зараз:</b> ${invoiceAmount} ₴`;
     await sendTelegramMessage(tgMessage);
 
     res.json({
@@ -154,21 +166,32 @@ app.post('/api/webhook/monobank', async (req, res) => {
     const verifiedAmount = verifyResponse.data.amount / 100;
 
     if (verifiedStatus === 'success') {
-      console.log(`[WEBHOOK] Verified success for Order: ${verifiedOrderId}`);
+      console.log(`[WEBHOOK] Verified success for Order: ${verifiedOrderId} (Amount: ${verifiedAmount})`);
+
+      const wasPrepayment = verifiedAmount === 190;
+      const sheetStatus = wasPrepayment ? 'Оплачено передплату (190 ₴)' : 'Оплачено повністю';
 
       // Update order status in Google Sheets
       const sheetPayload = {
         action: 'updateStatus',
         trxId: verifiedOrderId,
-        status: 'Оплачено'
+        status: sheetStatus
       };
       await sendToGoogleSheets(sheetPayload);
 
       // Send Telegram Notification for successful payment
-      const tgMessage = `<b>✅ Замовлення оплачено!</b>\n\n` +
-        `<b>🆔 ID:</b> ${verifiedOrderId}\n` +
-        `<b>💵 Сума:</b> ${verifiedAmount} ₴\n` +
-        `<b>💳 Статус:</b> Успішна оплата через Monobank`;
+      let tgMessage = '';
+      if (wasPrepayment) {
+        tgMessage = `<b>✅ Передплата отримана!</b>\n\n` +
+          `<b>🆔 ID:</b> ${verifiedOrderId}\n` +
+          `<b>💵 Сума передплати:</b> 190 ₴\n` +
+          `<b>💳 Статус:</b> Оплачено передплату через Monobank. Відправляємо післяплатою!`;
+      } else {
+        tgMessage = `<b>✅ Повна оплата отримана!</b>\n\n` +
+          `<b>🆔 ID:</b> ${verifiedOrderId}\n` +
+          `<b>💵 Сума:</b> ${verifiedAmount} ₴\n` +
+          `<b>💳 Статус:</b> Повна оплата через Monobank. Відправляємо без післяплати!`;
+      }
       await sendTelegramMessage(tgMessage);
     } else {
       console.log(`[WEBHOOK] Invoice status is ${verifiedStatus}. No action taken.`);

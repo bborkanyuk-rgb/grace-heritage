@@ -1074,6 +1074,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p id="err-shipping" style="display:none; color: #c0392b; font-size:0.78rem; margin-top:4px;">Будь ласка, введіть місто та відділення пошти</p>
         </div>
 
+        <!-- Payment Method Selector -->
+        <div id="payment-method-container" class="mb-6 p-4 rounded-xl" style="display: none; background: rgba(74, 11, 46, 0.03); border: 1.5px solid rgba(74, 11, 46, 0.1);">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--ink); margin-bottom:12px;">Спосіб оплати: *</label>
+          
+          <!-- Option 1: Prepayment (Default) -->
+          <div class="flex items-start mb-3 cursor-pointer" onclick="document.getElementById('pay-prepayment').checked = true; updatePaymentUI();">
+            <input
+              type="radio"
+              id="pay-prepayment"
+              name="payment-method"
+              value="prepayment"
+              checked
+              style="margin-top: 4px; accent-color: var(--burgundy);"
+            />
+            <label for="pay-prepayment" class="ml-2 cursor-pointer" style="font-size:0.85rem; color:var(--ink); font-weight:500;">
+              Передплата 190 ₴ <span style="font-weight: 400; color: var(--ink-light);">(решта <span id="prepayment-remainder">700</span> ₴ при отриманні на Новій Пошті)</span>
+            </label>
+          </div>
+
+          <!-- Option 2: Full Payment -->
+          <div class="flex items-start cursor-pointer" onclick="document.getElementById('pay-full').checked = true; updatePaymentUI();">
+            <input
+              type="radio"
+              id="pay-full"
+              name="payment-method"
+              value="full"
+              style="margin-top: 4px; accent-color: var(--burgundy);"
+            />
+            <label for="pay-full" class="ml-2 cursor-pointer" style="font-size:0.85rem; color:var(--ink); font-weight:500;">
+              Повна оплата онлайн <span style="font-weight: 400; color: var(--ink-light);">(оплата карткою через Monobank <span id="full-amount-label">890</span> ₴)</span>
+            </label>
+          </div>
+        </div>
+
         <button
           class="cta-btn"
           id="submit-btn"
@@ -1556,6 +1590,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         bundle_option: n 
       });
     }
+
+    // Show payment method selector and update prices
+    const pmContainer = document.getElementById('payment-method-container');
+    if (pmContainer) {
+      pmContainer.style.display = 'block';
+    }
+    updatePaymentUI();
+  }
+
+  function updatePaymentUI() {
+    let price = 890;
+    if (selectedBundle === 2) price = 1690;
+    else if (selectedBundle === 3) price = 2490;
+    
+    const remainderLabel = document.getElementById('prepayment-remainder');
+    const fullAmountLabel = document.getElementById('full-amount-label');
+    
+    if (remainderLabel) {
+      remainderLabel.textContent = (price - 190).toString();
+    }
+    if (fullAmountLabel) {
+      fullAmountLabel.textContent = price.toString();
+    }
   }
 
   // ── Scroll to order ──
@@ -1695,6 +1752,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     submitBtn.innerHTML = 'Надсилання...';
 
     // Set up payload for backend
+    const paymentMethodEl = document.querySelector('input[name="payment-method"]:checked');
+    const paymentMethod = paymentMethodEl ? paymentMethodEl.value : 'prepayment';
+
     const orderPayload = {
       name: name,
       phone: phone,
@@ -1702,7 +1762,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       bundle: selectedBundle,
       colors: colorsText,
       amount: itemPrice,
-      qty: itemQty
+      qty: itemQty,
+      paymentMethod: paymentMethod
     };
 
     const endpointUrl = (typeof BACKEND_URL !== 'undefined' ? BACKEND_URL : '') + '/api/create-payment';
