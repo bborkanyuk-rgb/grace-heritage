@@ -1063,15 +1063,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p id="err-phone" style="display:none; color: #c0392b; font-size:0.78rem; margin-top:4px;">Будь ласка, введіть коректний номер</p>
         </div>
 
-        <div class="mb-5">
-          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--ink); margin-bottom:8px;">Місто та відділення пошти: *</label>
+        <div class="mb-4">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--ink); margin-bottom:8px;">Місто або населений пункт *</label>
           <input
             type="text"
-            id="field-shipping"
+            id="field-city"
             class="form-input"
-            placeholder="Наприклад: м. Київ, відділення №128"
+            placeholder="Наприклад: м. Київ або с. Козин"
           />
-          <p id="err-shipping" style="display:none; color: #c0392b; font-size:0.78rem; margin-top:4px;">Будь ласка, введіть місто та відділення пошти</p>
+          <p id="err-city" style="display:none; color: #c0392b; font-size:0.78rem; margin-top:4px;">Будь ласка, введіть місто або населений пункт</p>
+        </div>
+
+        <div class="mb-5">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--ink); margin-bottom:8px;">Номер відділення або поштомату Нової Пошти *</label>
+          <input
+            type="text"
+            id="field-post-office"
+            class="form-input"
+            placeholder="Наприклад: Відділення №128 або Поштомат №4531"
+          />
+          <p id="err-post-office" style="display:none; color: #c0392b; font-size:0.78rem; margin-top:4px;">Будь ласка, введіть номер відділення або поштомату</p>
         </div>
 
         <button
@@ -1602,12 +1613,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     const name = document.getElementById('field-name').value.trim();
     const phone = document.getElementById('field-phone').value.trim();
-    const shipping = document.getElementById('field-shipping').value.trim();
+    const city = document.getElementById('field-city').value.trim();
+    const postOffice = document.getElementById('field-post-office').value.trim();
     let valid = true;
 
     document.getElementById('err-name').style.display = 'none';
     document.getElementById('err-phone').style.display = 'none';
-    document.getElementById('err-shipping').style.display = 'none';
+    document.getElementById('err-city').style.display = 'none';
+    document.getElementById('err-post-office').style.display = 'none';
 
     const nameParts = name.split(/\s+/).filter(part => part.length > 0);
     if (name.length < 2 || nameParts.length < 2) {
@@ -1629,13 +1642,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       valid = false;
     }
 
-    if (shipping.length < 5) {
-      document.getElementById('err-shipping').style.display = 'block';
-      if (valid) document.getElementById('field-shipping').focus();
+    if (city.length < 2) {
+      document.getElementById('err-city').style.display = 'block';
+      if (valid) document.getElementById('field-city').focus();
+      valid = false;
+    }
+
+    if (postOffice.length < 1) {
+      document.getElementById('err-post-office').style.display = 'block';
+      if (valid) document.getElementById('field-post-office').focus();
       valid = false;
     }
 
     if (!valid) return;
+
+    // Combine for backwards compatibility with Sheets and Telegram
+    const shipping = city + ', ' + postOffice;
 
     // Calculate color labels & dynamic GA4 eCommerce parameters
     const colorsText = selectedColors.map(c => colorData[c].label).join(' + ');
@@ -1801,7 +1823,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Reset form
         document.getElementById('field-name').value = '';
         document.getElementById('field-phone').value = '';
-        document.getElementById('field-shipping').value = '';
+        document.getElementById('field-city').value = '';
+        document.getElementById('field-post-office').value = '';
       } else {
         console.error('Telegram API response error:', response.statusText);
         alert('Сталася помилка при відправці замовлення. Будь ласка, спробуйте ще раз або зв\'яжіться з нами.');
